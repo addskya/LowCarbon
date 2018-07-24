@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.wallet.receipt.ReceiptContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+             layout="@layout/action_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_lightest"
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_50"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15">
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="@dimen/layout_height_120"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/layout_height_5"
+
+                        android:gravity="left"
+                        android:text="@string/txt_alipay"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/et_alipay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/layout_height_15"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:focusable="true"
+                        android:hint="@string/hint_alipay"
+                        android:inputType="text"
+                        android:textColor="@color/text_black3"
+                        android:textColorHint="@color/text_gray2"
+                        android:textSize="16dp" />
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/layout_height_20"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:paddingTop="@dimen/layout_height_20">
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="@dimen/layout_height_120"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/layout_height_5"
+
+                        android:gravity="left"
+                        android:text="@string/txt_weichat_qr"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+                    <FrameLayout
+                        android:layout_width="@dimen/layout_height_135"
+                        android:layout_height="@dimen/layout_height_135"
+                        android:layout_marginLeft="@dimen/layout_height_15"
+                        android:background="@drawable/bg_rect_gray"
+                        android:gravity="center"
+                        android:onClick="@{() -> view.onViewClick(0)}"
+                        android:padding="@dimen/layout_height_15">
+
+                        <TextView
+                            style="@style/BlackFontStyle.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/layout_height_15"
+                            android:drawableTop="@drawable/ic_receipt_qr_gray"
+                            android:gravity="left"
+                             android:text="@string/txt_upload_weichat_qr"
+                            android:textColor="@color/text_black2"
+                            android:textSize="@dimen/txt_size_smaller" />
+
+                        <!--<ImageView-->
+                            <!--android:id="@+id/iv_weichat_qr"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_gravity="center" />-->
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/iv_weichat_qr"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"  />
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/layout_height_20"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:paddingTop="@dimen/layout_height_20">
+
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="@dimen/layout_height_50"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/layout_height_5"
+
+                        android:gravity="left"
+                        android:text="@string/txt_bank_card"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/layout_height_15"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_top"
+                              android:divider="#ffff0000"
+                            android:dividerHeight="@dimen/layout_height_10"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                 android:layout_width="@dimen/layout_height_65"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:button="@drawable/selector_rg"
+                                android:checked="true"
+                                android:drawableLeft="@drawable/selector_rg"
+                                android:drawablePadding="@dimen/layout_height_5"
+                                android:text="设置"
+                                android:layout_marginLeft="@dimen/layout_height_5"
+                                android:visibility="invisible"
+                                android:textColor="@color/text_black2" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_height_45"
+                                android:background="@drawable/bg_rect_gray"
+                                android:orientation="horizontal"
+                                android:onClick="@{() -> view.onViewClick(1)}"
+                                android:gravity="center">
+
+
+                                <TextView
+                                    style="@style/BlackFontStyle.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/layout_height_45"
+                                    android:drawablePadding="@dimen/layout_height_5"
+                                    android:drawableStart="@drawable/ic_add_orange"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="@dimen/layout_height_10"
+                                    android:text="@string/txt_add_bank_card"
+                                    android:textColor="@color/text_black3" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/layout_height_20"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:paddingTop="@dimen/layout_height_20">
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="@dimen/layout_height_120"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/layout_height_5"
+                         android:gravity="left"
+                        android:text="@string/txt_pay_type"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+
+
+                        <RadioGroup
+                            android:id="@+id/rg_pay_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_15"
+
+                            android:orientation="horizontal" >
+
+                            <RadioButton
+                                android:id="@+id/rb_receipt_alipay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_black2"
+                                android:checked="true"
+                                android:button="@drawable/selector_rg"
+                                android:drawablePadding="@dimen/layout_height_5"
+                                android:drawableLeft="@drawable/selector_rg"
+                                android:background="@null"
+                                android:text="@string/txt_pay_type_alipay" />
+
+                            <RadioButton
+                                android:id="@+id/rb_receipt_wechat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/layout_height_10"
+                                android:layout_marginRight= "@dimen/layout_height_10"
+                                android:textColor="@color/text_black2"
+                                android:button="@drawable/selector_rg"
+                                android:drawablePadding="@dimen/layout_height_5"
+                                android:drawableLeft="@drawable/selector_rg"
+
+                                android:text="@string/txt_pay_type_wechat" />
+                            <RadioButton
+                                android:id="@+id/rb_receipt_bankcard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_black2"
+                                android:button="@drawable/selector_rg"
+                                android:drawablePadding="@dimen/layout_height_5"
+                                android:drawableLeft="@drawable/selector_rg"
+
+                                android:text="@string/txt_pay_type_bank_card" />
+                        </RadioGroup>
+
+
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/layout_height_20"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:paddingTop="@dimen/layout_height_20">
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="@dimen/layout_height_120"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/layout_height_5"
+
+                        android:gravity="left"
+                        android:text="@string/txt_show_account"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+
+
+                    <RadioGroup
+
+                        android:id="@+id/rg_displayaccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/layout_height_15"
+
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/rb_da_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_black2"
+                            android:checked="true"
+                            android:button="@drawable/selector_rg"
+                            android:drawablePadding="@dimen/layout_height_5"
+                            android:drawableLeft="@drawable/selector_rg"
+                            android:background="@null"
+                            android:text="@string/txt_show_account_yes" />
+
+                        <RadioButton
+                            android:id="@+id/rb_da_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight= "@dimen/layout_height_10"
+                            android:textColor="@color/text_black2"
+                            android:button="@drawable/selector_rg"
+                            android:drawablePadding="@dimen/layout_height_5"
+                            android:drawableLeft="@drawable/selector_rg"
+
+                            android:text="@string/txt_show_account_no" />
+
+                    </RadioGroup>
+
+
+
+                </LinearLayout>
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_height_15"
+                    android:layout_marginBottom="@dimen/layout_height_15"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/layout_height_15"
+
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:text="@string/txt_show_account_tips"
+                    android:textColor="@color/gray_dark"
+                    android:textStyle="normal" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_exchange"
+                        style="@style/BlackFontStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="@dimen/layout_height_50"
+                        android:layout_marginLeft="@dimen/layout_height_50"
+                        android:layout_marginRight="@dimen/layout_height_50"
+                        android:layout_marginTop="@dimen/layout_height_20"
+                        android:background="@drawable/bg_rect_rounded_orange3"
+                        android:onClick="@{() -> view.onViewClick(2)}"
+                        android:text="确定"
+
+                        android:textColor="@color/white"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

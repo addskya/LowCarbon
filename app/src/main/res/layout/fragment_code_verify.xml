@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+             android:id="@+id/tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="@dimen/layout_height_30"
+            android:layout_marginStart="@dimen/layout_height_30"
+            android:layout_marginTop="@dimen/layout_height_90"
+            android:gravity="center"
+            android:textSize="@dimen/txt_size_normal"
+            android:text="@string/text_verify_code_tips"
+            android:textColor="@color/text_black3"  />
+
+        <com.jkb.vcedittext.VerificationCodeEditText
+            android:id="@+id/verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tips"
+            android:layout_marginTop="@dimen/layout_height_30"
+            android:layout_marginBottom="@dimen/layout_height_30"
+            android:layout_marginEnd="@dimen/layout_height_50"
+            android:layout_marginStart="@dimen/layout_height_50"
+            android:inputType="number"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            app:bottomLineHeight="2dp"
+            app:bottomLineNormalColor="@color/gray_lighter"
+            app:bottomLineSelectedColor="@color/orange6"
+            app:figures="6"
+            app:selectedBackgroundColor="@color/transparent"
+            app:verCodeMargin="10dp">
+
+            <requestFocus />
+        </com.jkb.vcedittext.VerificationCodeEditText>
+
+        <TextView
+            style="@style/BlackFontStyle.Small"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/verify_code"
+            android:layout_centerHorizontal="true"
+            android:text="@string/text_verify_code_count_down"
+             android:textColor="@color/gray_dark"/>
+
+    </RelativeLayout>
+</layout>

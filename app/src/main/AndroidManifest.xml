@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mylowcarbon.app">
+
+
+    <!--蓝牙demo相关权限-->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:required="false" />
+
+
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.GET_TASKS"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_STATE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission
+        android:name="android.permission.MEDIA_CONTENT_CONTROL"
+        android:required="false" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        android:required="false" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@drawable/ic_app_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_app_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+
+        <activity
+            android:name=".browser.BrowserActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustNothing" />
+
+        <activity
+            android:name=".splash.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashAppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".home.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing" />
+
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true"
+            android:label="@string/text_login"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+
+        <activity
+            android:name=".register.RegisterActivity"
+            android:exported="false"
+            android:label="@string/text_reg"
+            android:launchMode="standard"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+
+        <activity
+            android:name=".forget.ForgetPasswordActivity"
+            android:exported="false"
+            android:label="@string/text_forget_password"
+            android:launchMode="singleInstance"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+
+        <activity
+            android:name=".register.gender.GenderActivity"
+            android:exported="false"
+            android:label="@string/text_gender"
+            android:launchMode="singleInstance"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".register.height.HeightActivity"
+            android:exported="false"
+            android:label="@string/text_height"
+            android:launchMode="singleInstance"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".register.weight.WeightActivity"
+            android:exported="false"
+            android:label="@string/text_weight"
+            android:launchMode="singleInstance"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--连接手环-->
+        <activity
+            android:name=".bracelet.link.LinkBraceletActivity"
+            android:exported="false"
+            android:label="@string/title_link_bracelet"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--绑定手环-->
+        <activity
+            android:name=".bracelet.bind.BindBraceletActivity"
+            android:exported="false"
+            android:label="@string/title_bind_bracelet"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--个人信息设置-->
+        <activity
+            android:name=".my.settings.PersonalSettingsActivity"
+            android:exported="false"
+            android:label="@string/text_personnel_settings"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--修改昵称-->
+        <activity
+            android:name=".my.nickname.EditNicknameActivity"
+            android:exported="false"
+            android:label="@string/title_edit_nickname"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateVisible" />
+
+        <!--绑定邮箱-->
+        <activity
+            android:name=".my.email.BindEmailActivity"
+            android:exported="false"
+            android:label="@string/title_bind_email"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateVisible" />
+
+        <!--修改登录密码-->
+        <activity
+            android:name=".my.password.login.EditLoginPwdActivity"
+            android:exported="false"
+            android:label="@string/text_edit_login_password"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateVisible" />
+
+        <!--验证身份-->
+        <activity
+            android:name=".my.verify.VerifyIdentityActivity"
+            android:exported="false"
+            android:label="@string/text_verify_identity"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateVisible" />
+
+        <!--查看交易密码-->
+        <activity
+            android:name=".my.password.deal.CheckCodeResultActivity"
+            android:exported="false"
+            android:label="@string/text_transaction_password"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--密保问题-->
+        <activity
+            android:name=".my.question.QuestionActivity"
+            android:exported="false"
+            android:label="@string/title_question"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateHidden" />
+
+        <!--我的设备-->
+        <activity
+            android:name=".bracelet.own.DevicesActivity"
+            android:exported="false"
+            android:label="@string/title_my_device"
+            android:launchMode="standard"
+            android:logo="@drawable/ic_app_launcher"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!--骑行-->
+        <activity android:name=".ride.RideActivity" />
+        <!--兑换-->
+        <activity android:name=".exchange.ExchangesActivity" />
+        <!--交易规则-->
+        <activity android:name=".trade.order.TradeRuleActivity" />
+        <!--挂单确认-->
+        <activity android:name=".trade.sell.OrderConfirmActivity" />
+        <!--买入-->
+        <activity android:name=".trade.buy.BuyActivity" />
+        <!--订单详情-->
+        <activity
+            android:name=".trade.order.OrderDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!--我的交易-->
+        <activity android:name=".trade.mytrade.MyTradeActivity" />
+        <!--子订单列表-->
+        <activity android:name=".trade.mytrade.childorder.ChildOrderActivity" />
+
+        <!--修改交易密码-->
+        <activity android:name=".my.activity.EditTransPwdActivity" />
+
+        <!--身份认证-->
+        <activity android:name=".my.authentication.AuthenticationActivity" />
+        <!--webview界面-->
+        <!--<activity android:name=".browser.BrowserActivity" />-->
+        <!--带titlebar的webview界面-->
+        <activity android:name=".browser.MyBarBrowserActivity" />
+        <!--我的钱包-->
+        <activity android:name=".my.wallet.MyWalletActivity" />
+        <!--选择时间-->
+        <activity android:name=".my.recommend.PickDateActivity" />
+        <!--转账-->
+        <activity android:name=".my.wallet.transfer.TransferActivity" />
+        <!--扫码界面-->
+        <activity android:name=".my.wallet.scan.ScanningActivity" />
+        <!--收款账号信息界面-->
+        <activity android:name=".my.wallet.receipt.ReceiptActivity" />
+        <!--添加银行卡-->
+        <activity android:name=".my.wallet.bankcard.AddBankCardActivity" />
+        <!--填写银行卡信息-->
+        <activity android:name=".my.wallet.bankcard.ChooseBankActivity" />
+
+        <!--编辑手环名称-->
+        <activity android:name=".my.activity.EditDeviceNameActivity" />
+        <!--关于-->
+        <activity android:name=".my.about.AboutActivity" />
+        <!--我的订单-->
+        <activity android:name=".my.order.MyOrdersActivity" />
+        <!--推荐有奖-->
+        <activity android:name=".my.recommend.RecommendActivity" />
+        <!--订单详情-->
+        <activity android:name=".my.order.MyOrderDetailActivity" />
+        <!--投诉-->
+        <activity android:name=".my.complaints.ComplaintsActivity" />
+        <!--手机号验证-->
+        <activity android:name=".register.code.CodeVerifyActivity" />
+        <!--极光IM-->
+        <activity android:name=".jiguang.BrowserImageActivity" />
+        <activity android:name=".jiguang.VideoActivity" />
+        <!--投诉结果-->
+        <activity android:name=".my.complaints.ComplaintsResultActivity" />
+        <!--service-->
+        <service android:name=".service.BluetoothService" />
+        <!--手环service-->
+        <service
+            android:name="com.yc.pedometer.sdk.BluetoothLeService"
+            android:enabled="true"
+            android:theme="@style/PcmTextAppearance" />
+
+        <service android:name="com.realsil.android.blehub.dfu.DfuService" />
+        <!--高德定位地图service-->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!-- 手机运动数据采集服务 -->
+        <service
+            android:name=".sport.phone.PhoneSportService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="3f11223dd04c6d8ea9bc5ee7b319ddcc" />
+        <meta-data
+            android:name="YCAPPKEY"
+            android:value="faffd42cfe62ef5869962bebcd82cd741yt" />
+
+
+        <!--android-解决 Android N 上 报错：android.os.FileUriExposedException-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.mylowcarbon.app.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

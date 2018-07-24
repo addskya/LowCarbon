@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="mining"
+            type="com.mylowcarbon.app.exchange.Mining" />
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.exchange.fragment.ExchangeContract.View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/BlackFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/layout_height_10"
+            android:drawablePadding="@dimen/layout_height_10"
+            android:drawableStart="@drawable/ic_bracelet_orange"
+            android:gravity="start|center_vertical"
+            android:minHeight="@dimen/layout_height_50"
+            android:text="@{mining.nickname}"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:background="@color/blue2"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/layout_height_20"
+            android:paddingTop="@dimen/layout_height_20">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/WhiteFontStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(mining.steps),default=5000}" />
+
+                <TextView
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="走路步数" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/WhiteFontStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(mining.clycle),default=10.2}" />
+
+                <TextView
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="骑行公里" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/WhiteFontStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(mining.total_energy)}" />
+
+                <TextView
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="能量值" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/WhiteFontStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(mining.total_lcl)}" />
+
+                <TextView
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预计挖矿" />
+
+            </LinearLayout>
+
+            <Button
+                style="@style/WhiteFontStyle"
+                android:layout_width="@dimen/layout_height_60"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/layout_height_10"
+                android:layout_marginStart="@dimen/layout_height_5"
+                android:background="@drawable/bg_rect_rounded_line_solid_transparent"
+                android:gravity="center"
+                android:onClick="@{() -> view.exchange(mining)}"
+                android:text="兑换"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

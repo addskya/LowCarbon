@@ -1,0 +1,50 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="error_code_unknown">"Unknown"</string>
+    <string name="error_code_200">"OK"</string>
+
+    <!-- 公共错误码 -->
+    <string name="error_code_1001">"参数不正确"</string>
+    <string name="error_code_1002">"服务器内部错误"</string>
+    <string name="error_code_1003">"授权失败"</string>
+    <string name="error_code_1004">"未登录"</string>
+    <string name="error_code_1005">"你的账号在另外的设备登录，请重新登录"</string>
+    <string name="error_code_1006">"该账号一天只能在一个设备上登录"</string>
+    <string name="error_code_1007">"用户不存在"</string>
+
+    <!-- 高超定义的错误码 -->
+    <string name="error_code_2001">"手机号码格式不正确"</string>
+    <string name="error_code_2002">"该手机号已被注册"</string>
+    <string name="error_code_2003">"短信发送出现异常"</string>
+    <string name="error_code_2004">"验证码不正确或者已失效"</string>
+    <string name="error_code_2005">"该手机号码不存在"</string>
+    <string name="error_code_2006">"密码不正确"</string>
+    <string name="error_code_2007">"密码输入次数过多，30分钟后再重试"</string>
+    <string name="error_code_2008">"密保答案不正确"</string>
+    <string name="error_code_2009">"两次密码不一致"</string>
+    <string name="error_code_2010">"该订单号不存在"</string>
+    <string name="error_code_2011">"该订单已过期"</string>
+    <string name="error_code_2012">"该订单已评论"</string>
+    <string name="error_code_2013">"该邀请码不存在"</string>
+    <string name="error_code_2014">"该钱包地址不存在"</string>
+    <string name="error_code_2015">"交易密码不正确"</string>
+    <string name="error_code_2016">"钱包币数不够"</string>
+    <string name="error_code_2017">"原始密码不正确"</string>
+    <string name="error_code_2018">"该邮箱已被占用"</string>
+    <string name="error_code_2019">"邮件发送发送出现异常"</string>
+    <string name="error_code_2020">"该设备已经被注册了"</string>
+    <string name="error_code_2021">"你的上一个设备还没有解绑"</string>
+    <string name="error_code_2022">"该设备还没有解绑"</string>
+    <string name="error_code_2023">"该卖家钱包碳币数不足"</string>
+    <string name="error_code_2024">"你购买数量超出卖家出售的数量"</string>
+
+    <!-- 明贤定义的错误码 -->
+    <string name="error_code_3001">"设备挖矿规则未开放"</string>
+    <string name="error_code_3002">"兑换数据异常"</string>
+    <string name="error_code_3003">"没有可兑换的数据或数据正在兑换中"</string>
+    <string name="error_code_3004">"用户没有绑定设备"</string>
+    <string name="error_code_3005">"当前日期与设备的兑换事务进行中"</string>
+    <string name="error_code_3006">"当天清算服务已经清算结束，请不要重复运行"</string>
+    <string name="error_code_3007">"设备绑定关系已经存在"</string>
+    <string name="error_code_3008">"验证设备失败"</string>
+
+</resources>

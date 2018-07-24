@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.recommend.RecommendRankingContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+    </data>
+
+    <com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:load_text="@string/text_load"
+        app:progress_bar_color="@color/colorPrimary"
+        app:refresh_text="@string/text_refresh">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_lightest"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_50"
+                    android:background="@color/gray_lightest"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_date_range"
+                            style="@style/BlackFontStyle.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="本月"
+                            android:textColor="@color/text_black2"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:onClick="@{() -> view.onViewClick(0)}"
+                        android:padding="@dimen/layout_height_10"
+                        android:src="@drawable/ic_pickdate_orange" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_top"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_80"
+                    android:background="@color/white"
+                    android:paddingRight="@dimen/layout_height_20"
+                    >
+
+
+                    <com.mylowcarbon.app.ui.SimpleImageView
+                        android:id="@+id/civ_head"
+                        android:layout_width="@dimen/layout_height_40"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/layout_height_45"
+                        fresco:src="@color/colorAccent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/layout_height_15"
+                        android:layout_toRightOf="@+id/civ_head"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_name"
+
+                                style="@style/WhiteFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="langlinlong"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_rank"
+
+                                style="@style/WhiteFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginLeft="@dimen/layout_height_15"
+                                android:text="@string/format_rank"
+                                android:textColor="@color/red"
+
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_height_7"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_sum_level"
+                                style="@style/WhiteFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:drawablePadding="@dimen/layout_height_5"
+                                android:text="@string/format_sum_level"
+
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/gray_lightest"
+                    android:layout_marginTop="@dimen/layout_height_5" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout>
+
+</layout>

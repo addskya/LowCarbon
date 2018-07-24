@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <import type="com.mylowcarbon.app.trade.mytrade.childorder.ChildOrderContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+             layout="@layout/action_bar" />
+        <include
+            layout="@layout/item_childorder_header"
+            android:id="@+id/item_header"/>
+        <com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:guidance_text_color="@color/colorPrimary"
+            app:guidance_view_bg_color="@color/transparent"
+            app:load_text="@string/text_load"
+            app:progress_bar_color="@color/colorPrimary"
+            app:refresh_text="@string/text_refresh">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_height_5" />
+        </com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout>
+    </LinearLayout>
+
+</layout>

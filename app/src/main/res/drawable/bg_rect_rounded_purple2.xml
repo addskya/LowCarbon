@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"  >
+    <!-- 设置描边 -->
+    <stroke android:width="2dp" android:color="@color/purple"  ></stroke>
+    <solid android:color="@color/purple" />
+
+    <corners android:radius="@dimen/layout_height_15" android:topRightRadius="0dp"  />
+</shape>

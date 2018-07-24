@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.bracelet.link.LinkBraceletContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_lightest"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/action_bar" />
+
+        <TextView
+            style="@style/BlackFontStyle.Small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_40"
+            android:background="@color/orange_light"
+            android:drawablePadding="@dimen/layout_height_5"
+            android:drawableStart="@drawable/ic_tips_orange"
+            android:gravity="center_vertical"
+            android:paddingEnd="0dp"
+            android:paddingStart="@dimen/layout_height_10"
+            android:text="@string/hint_add_bracelet"
+            android:textColor="@color/orange" />
+
+        <include layout="@layout/divider" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.mylowcarbon.app.ui.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/layout_height_5"
+                android:overScrollMode="never"
+                android:visibility="visible"
+                app:divider_h="@drawable/divider_list"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_add_orange"
+                android:gravity="center"
+                android:onClick="@{() -> view.addBracelet()}"
+                android:text="@string/text_no_bracelet_add_one"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:visibility="visible" />
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

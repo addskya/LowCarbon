@@ -1,0 +1,651 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">"低碳派"</string>
+
+    <!-- LoginActivity -->
+    <string name="copy_right">"Copyright @ 2018&#8211;2020 \n 低碳派 mylowcarbon.com 版权所有"</string>
+    <string name="title_user_agreement">"低碳派注册协议"</string>
+    <string name="user_agreement">"本服务条款是您与低碳派服务平台(包含)的所有者---科技有限公司及其关联公司之间就XXX所订立的合约或合同.请您仔细阅读本条款,仔细阅读本条款,仔细阅读本条款,仔细阅读本条款,仔细阅读本条款,仔细阅读本条款,仔细阅读本条款,仔细阅读本条款,"</string>
+    <string name="text_do_not_agree">"不同意"</string>
+    <string name="text_agree">"同意"</string>
+
+    <string name="hint_account">"手机号码"</string>
+    <string name="hint_password">"登录密码"</string>
+    <string name="hint_verify_code">"图形验证码"</string>
+
+
+    <string name="text_login">"登录"</string>
+    <string name="text_chinese">"中国大陆"</string>
+    <string name="text_register">"注册新账户"</string>
+    <string name="text_forget_password">"忘记密码?"</string>
+
+
+    <string name="text_ok">"好"</string>
+    <string name="text_cancel">"取消"</string>
+    <string name="text_skip">"跳过"</string>
+
+    <string name="text_region">"中国大陆"</string>
+    <string name="text_reg">注册</string>
+    <string name="hint_phone_number">"你的11位手机号码"</string>
+    <string name="text_reg_protocol">"注册即代码同意"</string>
+    <string name="text_app_protocol">"低碳派注册协议"</string>
+
+    <string name="text_input_verify_code">"输入验证码"</string>
+    <string name="text_verify_code_tips"><Data><![CDATA[  我们已向 <font color="#D4AF72">%1s</font> 发送验证码短信,请查看短信并输入验证。]]></Data></string>
+
+    <string name="text_verify_code_tips1">我们已向
+        <b>
+            <font fgcolor="#FF0000">
+                <xliff:g example="123456789" id="phone_number">%s</xliff:g>
+            </font>
+        </b>
+        发送验证码短信,请查看短信并输入验证</string>
+    <string name="text_verify_code_count_down">"接收短信大约需要45秒"</string>
+
+    <string name="text_set_password">"设置密码"</string>
+    <string name="text_your_phone_number">"你的手机号码"</string>
+    <string name="text_password_introduction">"登录密码,交易密码为6&#8211;12位,不能全是数字"</string>
+    <string name="hint_input_login_password">"输入登录密码"</string>
+    <string name="hint_input_deal_password">"输入交易密码"</string>
+    <string name="hint_recommend_code">"输入推荐码,可不填"</string>
+    <string name="text_save">"保存"</string>
+
+    <!-- 账号找回密码 Fragment -->
+    <string name="text_find_password">"找回密码"</string>
+    <string name="text_input_account_find_password">"请填写您要找回密码的账号"</string>
+    <string name="hint_input_account">"输入你的账号"</string>
+    <string name="text_find_password_by_question">"通过密保找回"</string>
+    <string name="text_next">"下一步"</string>
+    <string name="text_previous">"上一步"</string>
+    <string name="text_find_password_summary">"你还可以通过已绑定的邮箱,向邮箱发送重置密码申请\n我们重置好密码后,会发送通知到该邮箱"</string>
+
+    <!-- 密保问题fragment -->
+    <string name="text_question">"密保问题"</string>
+    <string name="hint_input_answer">"输入答案"</string>
+    <string name="text_input_question_answer">"输入答案"</string>
+    <string name="text_input_answer_tips">"请回答已设置的密保进行验证"</string>
+    <string name="text_find_password_by_account">"通过手机号找回"</string>
+    <string name="text_verify_question">"密保问题"</string>
+    <string name="text_answer">"答案"</string>
+    <string name="hint_answer">"请输入答案"</string>
+    <string name="text_question_summary">"密保问题，可用于找回登录密码，或查看交易密码"</string>
+
+    <!-- 设置新密码Fragment -->
+    <string name="title_set_new_password">"设置新密码"</string>
+    <string name="text_save_new_password">"保存新密码"</string>
+    <string name="text_set_new_password">"请为您的账号 %1s设置一个新密码"</string>
+    <string name="hint_input_new_password">"输入新密码"</string>
+    <string name="hint_confirm_new_password">"确认新密码"</string>
+
+    <string name="text_gender">"性别"</string>
+    <string name="text_male">"男生"</string>
+    <string name="text_female">"女生"</string>
+
+    <string name="text_height">"身高"</string>
+    <string name="text_weight">"体重"</string>
+
+    <string name="format_height">"我的身高%1dCm"</string>
+    <string name="format_weight">"我的体重%1dKg"</string>
+    <string name="title_weight">@string/text_weight</string>
+
+    <string name="text_verify_identity">"验证身份"</string>
+    <string name="text_transaction_password">"交易密码"</string>
+
+    <string-array name="tab_titles">
+        <item> 运动挖矿 </item>
+        <item> 交易中心 </item>
+        <!--<item> 奖品兑换 </item>-->
+        <!--<item> 资讯 </item>-->
+        <item> 我的 </item>
+    </string-array>
+
+    <string-array name="tab_mine">
+        <item> 步行 </item>
+        <item> 骑行 </item>
+    </string-array>
+
+    <string-array name="tab_recommend">
+        <item> 我的推荐 </item>
+        <item> 推荐排名 </item>
+    </string-array>
+    <string-array name="tab_my_trade">
+        <item> 卖出 </item>
+        <item> 买入 </item>
+        <item> 已完成 </item>
+    </string-array>
+    <string-array name="sp_bank_type">
+        <item> 请选择卡类型 </item>
+        <item> 储蓄卡 </item>
+        <item> 信用卡 </item>
+    </string-array>
+    <string-array name="sp_question">
+        <item> 自己之前设置的密保问题1 </item>
+        <item> 自己之前设置的密保问题2 </item>
+        <item> 自己之前设置的密保问题3 </item>
+        <item> 自己之前设置的密保问题4 </item>
+        <item> 自己之前设置的密保问题5 </item>
+        <item> 自己之前设置的密保问题6 </item>
+    </string-array>
+    <!-- 蓝牙手环-->
+    <string name="not_support_ble">设备不支持蓝牙4.0</string>
+    <string name="exchange_lcl">兑换\n LCL</string>
+    <string name="action_settings">Settings</string>
+    <string name="connect_status_index">连接状态：</string>
+    <string name="connected">已连接</string>
+    <string name="disconnect">未连接</string>
+    <string name="rssi_tv">线损值：</string>
+    <string name="height">身高</string>
+    <string name="weight">体重</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="steps">步数:</string>
+    <string name="distance">距离:</string>
+    <string name="calorie">卡路里</string>
+    <string name="sleep">睡眠:</string>
+    <string name="deep">深睡:</string>
+    <string name="light">浅睡:</string>
+    <string name="awake">清醒:</string>
+    <string name="sync_step">计步同步</string>
+    <string name="sync_sleep">睡眠同步</string>
+    <string name="scan">扫描</string>
+    <string name="about_update_app">应用升级</string>
+    <string name="read_ble_version">获取蓝牙版本</string>
+    <string name="read_ble_version_first">请先获取蓝牙版本，再进行固件升级</string>
+    <string name="read_step_sleep_status">获取计步和睡眠状态</string>
+    <string name="read_ble_battery">获取设备电量</string>
+    <string name="set_ble_time">设置时间</string>
+    <string name="update_ble">固件升级</string>
+    <string name="et_height_hint">cm</string>
+    <string name="et_weight_hint">kg</string>
+    <string name="pull_down_scan_equipment"> 下拉扫描设备 </string>
+    <string name="bracelet_setting">手环设置 </string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="zero_count">0 次</string>
+    <string name="count">次</string>
+    <string name="zero_hour_zero_minute">0 时  0 分</string>
+    <string name="kilocalorie">千卡</string>
+    <string name="kilometers">千米</string>
+    <string name="zero_kilometers">0 千米</string>
+    <string name="zero_kilocalorie">0 千卡</string>
+    <string name="search_device">搜索设备</string>
+    <string name="yc_connect_success">连接成功</string>
+    <string name="yc_connect_faile">连接失败</string>
+    <string name="yc_connect">已连接</string>
+    <string name="yc_unconnect">未连接</string>
+    <string name="unknown_device">未知设备</string>
+    <string name="YC_Dolen_connecting">连接中...</string>
+    <string name="YC_Dolen_connect_start">开始连接</string>
+    <string name="someone_connecting">已有设备正在连接,请稍后...</string>
+    <string name="bg_connecting">设备正在连接,请稍后...</string>
+    <string name="YC_Dolen_disconnect">断开连接</string>
+    <string name="YC_Dolen_disconnecting">断开中...</string>
+    <string name="yc_bind_state">绑定状态</string>
+    <string name="YC_unbinddevice">找到的可用设备</string>
+    <string name="YC_unfinddevice">未找到可用设备</string>
+
+    <string name="not_open_ble">请先开启蓝牙</string>
+    <string name="search_devicing">正在搜索设备...</string>
+    <string name="details">详情</string>
+    <string name="refresh">刷新</string>
+    <string name="second_details">详情</string>
+    <string name="no_motion_today"> 今天没有运动</string>
+    <string name="the_movement_did_not_meet"> 今天运动未达标</string>
+    <string name="assess_have_go">活动了</string>
+    <string name="assess_have_burn">消耗了</string>
+    <string name="total">共</string>
+    <string name="step">步</string>
+    <string name="fminute">分钟</string>
+    <string name="needless_refresh_ui">无需更新</string>
+    <string name="find_new_version_app">发现应用新版本，是否更新？</string>
+    <string name="find_new_version_ble">发现手环新版本，是否更新？</string>
+    <string name="find_new_ble_version_tip">发现手环新版本，请升级!</string>
+    <string name="ble_updatting">手环更新中</string>
+    <string name="ble_is_newest">手环已是最新版本。</string>
+    <string name="frequent_access_server">请勿频繁访问服务器</string>
+    <string name="server_is_busy">服务器忙，请稍后重试!</string>
+    <string name="please_open_bluetooth">请打开蓝牙</string>
+    <string name="sdcarderror">SDCard Exception</string>
+    <string name="ble_updating">蓝牙正在升级...</string>
+    <string name="ble_update_successful">固件升级完成</string>
+    <string name="ble_fail_update">升级失败，请重新连接手环再升级...</string>
+    <string name="download_fail">下载失败</string>
+    <string name="YC_Dolen_update_warn">更新提示</string>
+    <string name="YC_Dolen_find_new_version">发现新版本，是否更新？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="YC_Dolen_downloading">正在下载更新中，请查看通知栏！</string>
+    <string name="confire_is_network_available">请确认网络是否可用!</string>
+    <string name="power_pool">请在手环电量充足的情况下升级~</string>
+    <string name="newest_version">已是最新版本</string>
+    <string name="not_newest_version">发现新版本</string>
+    <string name="get_ble_version_fails">获取版本失败</string>
+    <string name="set_the_setting_ini_err">"The configuration file does not exist or is invalid!!"</string>
+    <string name="select_file_is_not_img">"The selected file is not img file format, please choose again!!"</string>
+    <string name="suota_update_succeed">"Upgrade has been successful!"</string>
+    <string name="please_connect_bracelet">请连接手环</string>
+    <string name="click_to_install">下载完成，点击安装</string>
+    <string name="fail_download">下载失败</string>
+    <string name="sedentary_remind">久坐提醒</string>
+    <string name="unit">分钟</string>
+    <string name="open">开启</string>
+    <string name="close">关闭</string>
+    <string name="sync_rate">心率同步</string>
+    <string name="rate_test_start">开始测试</string>
+    <string name="rate_test_stop">停止测试</string>
+    <string name="rate">心率:</string>
+    <string name="lowest_rate">最低心率：</string>
+    <string name="verage_rate">平均心率：</string>
+    <string name="highest_rate">最高心率：</string>
+    <string name="metric_system">公制</string>
+    <string name="inch_system">英制</string>
+    <string name="open_channel_ok">打开通道ok</string>
+    <string name="close_channel_ok">关闭通道ok</string>
+    <string name="test_channel">测试通道</string>
+    <string name="channel_testting">测试通道中</string>
+    <string name="test_channel_ok">测试通道ok</string>
+    <string name="push_message_content">推送消息内容</string>
+    <string name="tip">提示</string>
+    <string name="set_password_for_band">请设置手环密码并牢记</string>
+    <string name="input_password_for_band">	请输入手环密码</string>
+    <string name="input_password_for_band_again">密码验证失败，请重新输入</string>
+    <string name="sync_swim_finish">游泳数据同步完成</string>
+    <string name="sync_swim">同步游泳数据</string>
+    <string name="swim_stroke_count">划臂次数:</string>
+    <string name="swim_time">游泳时间（秒）:</string>
+    <string name="high_pressure">高压:</string>
+    <string name="low_pressure">低压:</string>
+    <string name="sync_pressure">同步血压</string>
+    <string name="start_pressure">测血压</string>
+    <string name="stop_pressure">停测血压</string>
+    <string name="test_pressure_ok">血压测试完成</string>
+    <string name="sync_pressure_ok">血压同步完成</string>
+    <string name="ibeacon_command">Ibeacon指令</string>
+    <string name="do_not_support_ibeacon">不支持Ibeacon功能</string>
+    <string name="open_camera">打开相机</string>
+    <string name="close_camera">关闭相机</string>
+    <string name="sync_skip_finish">跳绳数据同步完成</string>
+    <string name="sync_skip">同步跳绳数据</string>
+    <string name="skip_count">跳绳次数:</string>
+    <string name="skip_time">跳绳时间（秒）:</string>
+    <string name="not_support_skip">不支持跳绳功能</string>
+    <string name="not_support_swim">不支持游泳功能</string>
+    <string name="today_sports_time">今天运动时间</string>
+    <string name="seven_days_sports_time">7天运动时间</string>
+
+    <string name="text_time_syncing">"同步时间"</string>
+    <string name="text_step_syncing">"同步步行"</string>
+    <string name="text_heart_rate_syncing">"同步心率"</string>
+    <string name="text_blood_pressure_syncing">"同步血压"</string>
+    <string name="text_sleep_syncing">"同步睡眠"</string>
+
+
+    <string name="format_count_down_walk_value">"距离目标还差 %1d 步"</string>
+    <string name="format_walk_value">"%1d 步"</string>
+    <string name="text_walk_desc">"今日步数"</string>
+    <string name="format_calorie_value">"%1d 千卡"</string>
+    <string name="text_calorie_desc">"卡路里"</string>
+    <string name="format_power_value">"%1d "</string>
+    <string name="text_power_desc">"能力值"</string>
+    <string name="format_heart_rate_value">"%1d"</string>
+    <string name="text_heart_rate_desc">"心率"</string>
+    <string name="format_blood_pressure_value">"%1d"</string>
+    <string name="text_blood_pressure_desc">"血压"</string>
+    <string name="format_sleep_value">"%1d 小时"</string>
+    <string name="text_sleep_desc">"睡眠"</string>
+
+    <string name="format_ride_value">"%1d 公里"</string>
+    <string name="text_ride_desc">"今日骑行"</string>
+
+    <string name="text_sport_data_source">"数据来源:"</string>
+    <string name="text_sport_source_phone">"手机(android)"</string>
+    <string name="text_sport_source_bracelet">"手环"</string>
+
+    <string name="text_invalid_temperature">"--°C"</string>
+    <string name="format_temperature">"%1s°C"</string>
+
+    <string name="title_edit_nickname">"修改昵称"</string>
+    <string name="text_nickname">"昵称"</string>
+    <string name="hint_nickname">"请输入昵称"</string>
+    <string name="text_sure">"确定"</string>
+
+    <string name="format_total_lcl">"%1f低碳链"</string>
+
+    <string name="title_bind_email">"绑定电子邮箱"</string>
+    <string name="text_email">"电子邮箱"</string>
+    <string name="hint_email">"请输入邮箱地址"</string>
+    <string name="text_verify_code">"验证码"</string>
+    <string name="hint_email_verify_code">"请输入邮箱验证码"</string>
+    <string name="text_send_verify_code">"发送验证码"</string>
+
+    <string name="text_personnel_settings">"个人信息设置"</string>
+    <string name="text_avatar">"头像"</string>
+    <string name="text_logout">"退出登录"</string>
+    <string name="warn_logout">"退出登录将清空本地的数据,是否确定退出?"</string>
+
+    <string name="text_edit_login_password">"修改登录密码"</string>
+    <string name="text_old_password">"旧密码"</string>
+    <string name="hint_old_password">"请输入旧密码"</string>
+    <string name="text_new_password">"新密码"</string>
+    <string name="hint_password_limit">"请输入6~12位,不能全是数字"</string>
+    <string name="text_password_confirm">"确认密码"</string>
+    <string name="hint_password_confirm">"请再次输入新密码"</string>
+    <string name="error_empty_password">"密码不能为空"</string>
+    <string name="error_different_password">"两次密码输入不一致"</string>
+
+    <string name="text_know">知道了</string>
+    <string name="text_auth">去认证</string>
+    <string name="text_refill">重新填写</string>
+    <string name="text_trade_unauth_tip">挂单交易前，请先实名认证</string>
+    <string name="text_trade_pricae_tip">请输入单价</string>
+    <string name="text_trade_num_tip0">请输入出售数量</string>
+    <string name="text_trade_num_tip1">出售数量超额</string>
+    <string name="text_trade_num_tip2">挂单卖出至少100个低碳链并且是10个整倍数</string>
+    <string name="text_trade_cancel_tip">取消交易，会影响到你的综合诚信度，确定取消？</string>
+    <string name="text_trade_cancel_sure">确定取消</string>
+    <string name="text_trade_cancel_continue">继续交易</string>
+
+
+    <string name="text_load">加载更多</string>
+    <string name="text_refresh">下拉刷新</string>
+
+    <string name="text_upload_id_photo_front">上传身份证正面照片</string>
+    <string name="tip_upload_id_photo_front">请上传身份证正面照片</string>
+    <string name="text_upload_id_photo_back">上传身份证反面照片</string>
+    <string name="tip_upload_id_photo_back">请上传身份证反面照片</string>
+    <string name="text_upload_id_photo_hold">上传手持身份证半身照</string>
+    <string name="tip_upload_id_photo_hold">请上传手持身份证半身照</string>
+
+    <string name="text_name">姓名</string>
+    <string name="hint_name">请输入您身份证上的姓名</string>
+    <string name="text_id">身份证号</string>
+    <string name="hint_id">请输入18位身份证号码</string>
+
+    <string name="text_upload_suc">上传成功</string>
+    <string name="text_upload_fail">上传失败</string>
+
+    <string name="format_wallet_address">钱包地址：%s</string>
+    <string name="format_income">收入：%1$.2f低碳链</string>
+    <string name="format_transfer">转出：%1$.2f低碳链</string>
+
+    <string name="tip_pick_startime">请选择开始时间</string>
+    <string name="tip_pick_endtime">请选择结束时间</string>
+
+    <string name="txt_shs_refresh_1">下拉刷新</string>
+    <string name="txt_shs_refresh_2">松开刷新</string>
+    <string name="txt_shs_refresh_3">正在刷新...</string>
+    <string name="txt_shs_load_1">上拉加载</string>
+    <string name="txt_shs_load_2">松开加载</string>
+    <string name="txt_shs_load_3">正在加载...</string>
+
+    <string name="txt_copy_suc">复制成功</string>
+    <string name="txt_type_transfer">转出</string>
+    <string name="txt_type_income">转入</string>
+
+    <string name="format_save_pic_suc">图片保存成功 地址：%s</string>
+    <string name="format_invitation_code">推荐码：%s</string>
+    <string name="format_recommend_profit">推荐奖励总收益：%s步</string>
+
+    <string name="text_copy_invitation_code">复制推荐码</string>
+    <string name="format_sum_level">一级推荐:%1$d人，二级推荐:%2$d人，总收益:%3$d步</string>
+    <string name="format_rank">第%1$d名</string>
+
+    <string name="txt_user_level_1">一级用户</string>
+    <string name="txt_user_level_2">二级用户</string>
+
+    <string name="txt_user_status_1">用户冻结</string>
+    <string name="txt_user_status_2">账号异常</string>
+    <string name="txt_user_status_3">未实名认证</string>
+    <string name="txt_user_status_4">实名认证审核中</string>
+    <string name="txt_user_status_5">已实名认证</string>
+    <string name="txt_user_status_6">拒绝认证</string>
+
+    <string name="txt_contact">合作联系方式</string>
+    <string name="format_contact_qq">QQ:%1$s</string>
+    <string name="format_contact_wechat">微信:%1$s</string>
+    <string name="format_contact_weibo">微博:%1$s</string>
+    <string name="format_contact_email">邮箱:%1$s</string>
+
+    <string name="txt_wallet_address">钱包地址</string>
+    <string name="hint_wallet_address">请输入钱包地址</string>
+    <string name="tips_transfer_wallet_address">请输入收款方钱包地址</string>
+
+    <string name="txt_receipt">收款方</string>
+    <string name="txt_transfer_amount">转账金额</string>
+    <string name="hint_transfer_amount">请输入金额</string>
+    <string name="txt_transfer_pwd">交易密码</string>
+    <string name="hint_transfer_pwd">请输入交易密码</string>
+    <string name="hint_transfer_pwd_erro">交易密码输入错误</string>
+
+    <string name="txt_alipay">支付宝账号</string>
+    <string name="hint_alipay">请输入支付宝账号</string>
+
+    <string name="txt_weichat_qr">微信收款二维码</string>
+    <string name="txt_upload_weichat_qr">上传微信收款二维码</string>
+    <string name="txt_bank_card">银行卡</string>
+    <string name="txt_add_bank_card">添加银行卡</string>
+    <string name="txt_pay_type">默认收款方式</string>
+    <string name="txt_pay_type_alipay">支付宝</string>
+    <string name="txt_pay_type_wechat">微信</string>
+    <string name="txt_pay_type_bank_card">银行卡</string>
+
+    <string name="txt_show_account_tips">提示：展示账号，买家可直接看到收款方式下的详细账号信息。不展示账号，买家只能看到收款方式，不能看到具体账号，可在交易中通过聊天互动的方式告知买家。</string>
+    <string name="txt_show_account">展示账号</string>
+    <string name="txt_show_account_yes">展示</string>
+    <string name="txt_show_account_no">不展示</string>
+
+    <string name="tips_card">请绑定持卡人本人的银行卡</string>
+    <string name="txt_card_user_name">持卡人姓名</string>
+    <string name="hint_card_user_name">请输入持卡人姓名</string>
+    <string name="txt_card_number">银行卡号</string>
+    <string name="hint_card_number">请输入银行卡号</string>
+
+    <string name="txt_card_type">卡类型</string>
+    <string name="txt_card_phone">手机号</string>
+    <string name="hint_card_phone">请输入银行卡预留手机</string>
+    <string name="txt_card_tips">信息加密处理，仅用于银行卡验证</string>
+
+    <string name="txt_addcard_number">银行卡号</string>
+    <string name="txt_finish">完成</string>
+
+    <string name="txt_recommend_qr">推荐二维码</string>
+    <string name="txt_recommend_qr_tips">可将二维码保存到手机本地，也可长按复制直接发送给好友。</string>
+
+    <string name="txt_receipt_qr">收款二维码</string>
+    <string name="txt_receipt_qr_tips">可将二维码保存到手机本地，也可长按复制直接发送给好友，对方扫码即可转账到你钱包中。</string>
+
+    <string name="txt_save_to_phone"> 保存到手机</string>
+    <string name="txt_device_list"> 设备列表</string>
+    <string name="txt_complaints_buyer">投诉买家 </string>
+    <string name="txt_complaints_seller">投诉卖家 </string>
+
+    <string name="title_recommend">推荐有奖</string>
+    <string name="title_about">关于</string>
+    <string name="title_authentication">身份认证</string>
+    <string name="title_complaints">投诉</string>
+    <string name="title_complaints_result">提交成功</string>
+    <string name="title_complaints_need_know">投诉须知</string>
+    <string name="title_add_bank">添加银行卡</string>
+    <string name="title_add_bank_info">填写银行卡信息</string>
+    <string name="title_my_wallet">我的钱包</string>
+    <string name="title_pick_date">选择时间</string>
+    <string name="title_receipt">收款账号信息</string>
+    <string name="title_scan">扫码</string>
+    <string name="title_transfer">转账</string>
+    <string name="title_question">密保问题</string>
+    <string name="title_edit_trans_pwd">修改交易密码</string>
+    <string name="title_my_order">我的订单</string>
+    <string name="title_my_order_detail">订单详情</string>
+    <string name="title_my_device">我的设备</string>
+    <string name="text_exchange_lcl">"兑换LCL"</string>
+    <string name="text_exchange_lcl_desc">"切换设备上线后，可去兑换该设备所产生的矿产"</string>
+    <string name="title_edit_device_name">编辑手环名称</string>
+    <string name="text_edit_device_name">"编辑名称"</string>
+    <string name="text_unbind_device">"解绑手环"</string>
+
+    <string name="title_trade_rule">低碳派交易规则</string>
+    <string name="title_order_confirm">挂单确认</string>
+    <string name="title_my_trade">我的交易</string>
+    <string name="title_child_order">子订单列表</string>
+    <string name="title_buy">买入</string>
+
+    <string name="title_browser">浏览器</string>
+    <string name="title_ride">骑行</string>
+    <string name="title_link_bracelet">连接手环</string>
+    <string name="title_bind_bracelet">绑定手环</string>
+    <string name="text_add_bracelet">"添加手环"</string>
+    <string name="hint_add_bracelet">"提示：同一时刻，只能有一个手环在线"</string>
+    <string name="text_no_bracelet_add_one">"你还没有手环,点击添加"</string>
+    <string name="text_online">"当前在线"</string>
+    <string name="text_connect_online">"连接上线"</string>
+    <string name="text_before_yesterday">"前天"</string>
+    <string name="hint_tap_ble_connect">"请点击你要绑定的手环"</string>
+    <string name="text_bt_disable">"手机蓝牙未开启"</string>
+    <string name="text_bt_searching">"正在搜索手环"</string>
+    <string name="hint_connect_bt_close">"请将手环贴近手机"</string>
+    <string name="text_enable">"开启"</string>
+    <string name="text_yesterday">"昨天"</string>
+    <string name="text_today">"今日"</string>
+    <string name="title_exchange">兑换LCL</string>
+    <string name="title_trade">交易</string>
+
+    <string name="format_number_device">"共%1d台设备"</string>
+    <string name="format_energy">"获得总能量值%1d，预计挖矿%2f"</string>
+    <string name="text_exchange_all">"一键兑换"</string>
+
+    <string name="format_exchange_result">"你%1s的运动获得总能量值：%2s"</string>
+
+    <string name="format_step_count">"步数:%1d步"</string>
+    <string name="format_riding_km">"骑行:%1.2f公里"</string>
+    <string name="format_calorie">"总能量值:%1d"</string>
+
+    <string name="txt_trade_avg_price">今日碳币交易行情：</string>
+    <string name="format_trade_avg_price">¥%1$.2f</string>
+    <string name="txt_trade_trend">每日价格走势图</string>
+    <string name="txt_sell">卖出</string>
+
+    <string name="txt_seller_nickname">卖家昵称</string>
+    <string name="txt_amount">金额</string>
+    <string name="txt_number">数量</string>
+    <string name="txt_total_amount">总金额</string>
+
+    <string name="txt_sell_num">出售数量:</string>
+    <string name="txt_sell_price">单价:</string>
+    <string name="txt_sell_fees">手续费:</string>
+    <string name="txt_sell_receipt">收款方式:</string>
+    <string name="format_sell_receipt_alipay">支付宝（%s）</string>
+    <string name="format_sell_receipt_weixin">微信（%s）</string>
+    <string name="format_sell_receipt_bank_cards">银行卡（%s）</string>
+    <string name="txt_update_receipt">更新收款账号</string>
+    <string name="txt_sell_time">挂单时间:</string>
+    <string name="txt_sell_time_tips">请设置你希望自动显示的天数和时间，最多7天。不设置开始/结束时间，则不会自动展示。</string>
+    <string name="txt_today">今天:</string>
+    <string name="txt_tomorrow">明天:</string>
+    <string name="txt_third_day">第三天:</string>
+    <string name="txt_fourth_day">第四天:</string>
+    <string name="txt_fifth_day">第五天:</string>
+    <string name="txt_sixth_day">第六天:</string>
+    <string name="txt_seventh_day">第七天:</string>
+
+    <string name="txt_start_time">开始时间</string>
+    <string name="txt_end_time">结束时间</string>
+    <string name="txt_to">至</string>
+    <string name="format_trade_num">交易次数：%d</string>
+    <string name="format_success_trade_num">成功次数：%d</string>
+    <string name="format_good_comment_rate">好评率：%1$d%%</string>
+    <string name="format_success_trade_rate">成功率：%1$d%%</string>
+    <string name="txt_deduct_number">可交易量:</string>
+    <string name="txt_sell_xixian">付款期限:</string>
+    <string name="txt_buy_num">购买量:</string>
+    <string name="txt_amounts_payable">应付金额:</string>
+    <string name="hint_buy_num">请输入购买数量</string>
+    <string name="hint_num_overflow">购买数量超出可交易量</string>
+    <string name="txt_submit_order">提交订单</string>
+    <string name="txt_trade_rule">LCL交易 规则说明</string>
+    <string name="txt_buy">买入</string>
+
+    <string name="txt_order_no">订单编号:</string>
+    <string name="txt_order_create_time">下单时间:</string>
+    <string name="txt_order_buy_num">购买数量:</string>
+    <string name="txt_tag_payed">标记为付款</string>
+    <string name="txt_tag_Receipt">标记已收款</string>
+    <string name="txt_cancel_trade">取消交易</string>
+    <string name="txt_appraise_buyer">交易成功，请评价买家</string>
+    <string name="txt_appraise_seller">交易成功，请评价卖家</string>
+
+    <string name="txt_mytrade_type1">挂单时间</string>
+    <string name="txt_mytrade_type2">卖家昵称</string>
+    <string name="txt_mytrade_type3">类型</string>
+
+    <string name="txt_num_type1">数量</string>
+    <string name="txt_num_type2">购买量</string>
+    <string name="txt_num_type3">成交量</string>
+    <string name="txt_num_operation1">操作</string>
+    <string name="txt_num_operation2">交易对象</string>
+
+    <string name="txt_complete_trade_type1">买入</string>
+    <string name="txt_complete_trade_type2">卖出</string>
+
+    <string name="txt_order_status_minus_1">订单过期</string>
+    <string name="txt_order_status_0">取消订单</string>
+    <string name="txt_order_status_1">待付款</string>
+    <string name="txt_order_status_2">已付款</string>
+    <string name="txt_order_status_3">已收货</string>
+    <string name="txt_order_status_4">已评价</string>
+
+    <string name="txt_order_status_response_0">已取消</string>
+    <string name="txt_order_status_response_1">去付款</string>
+    <string name="txt_order_status_response_2">等待卖家确认</string>
+    <string name="txt_order_status_response_3">去评价</string>
+    <string name="txt_order_status_response_4">已评价</string>
+    <string name="txt_order_status_response_5">标记已收款</string>
+
+    <string name="txt_cancel_order">撤单</string>
+    <string name="txt_child_list">子单列表</string>
+    <string name="text_complaints_user">投诉对象</string>
+    <string name="hint_complaints_user">请输入用户昵称(或者姓名)</string>
+    <string name="txt_choose_complaints_reason">请选择投诉该的原因</string>
+    <string name="txt_complaints_reason_1">恶意交易</string>
+    <string name="txt_complaints_reason_2">账户异常</string>
+    <string name="txt_complaints_reason_3">投诉原因，可在后台管理</string>
+    <string name="txt_upload_complaints_evidence">请上传投诉证据</string>
+    <string name="format_total_picture">图片证据%d张</string>
+    <string name="tips_upload_complaints_evidence">图片证据中，尽量包含被投诉用户的头像、昵称等身份信息，以便低碳派团队准确处理。</string>
+    <string name="txt_submit">提交</string>
+    <string name="tips_complaints">您还可以通过以下方式发起投诉</string>
+    <string name="txt_official_contact_information">官方联系方式</string>
+    <string name="hint_wallet_no_account">请导入钱包</string>
+    <string name="txt_appraise_1">好评</string>
+    <string name="txt_appraise_2">中评</string>
+    <string name="txt_appraise_3">差评</string>
+
+    <string name="title_verify_code">验证手机号</string>
+
+
+    <!--Chatting Widget-->
+    <string name="chat_title">0002</string>
+    <string name="chat_input_hint">Send message</string>
+    <string name="message_click_hint">Message click event</string>
+    <string name="message_long_click_hint">Message long press event</string>
+    <string name="avatar_click_hint">Avatar click event</string>
+    <string name="toast_username_null">username is null</string>
+    <string name="toast_password_null">password is null</string>
+
+    <string name="format_total_num">挂单总量 %1d</string>
+    <string name="format_trade_num2">已下单 %1d</string>
+    <string name="format_success_trade_num3">成交量 %1d</string>
+
+    <string name="format_chat_sysytem_notification_order_status_0">系统消息：订单编号%1s交易取消</string>
+    <string name="format_chat_sysytem_notification_order_status_1">系统消息：订单编号%1s买家已下单，等待买家付款</string>
+    <string name="format_chat_sysytem_notification_order_status_2">系统消息：订单编号%1s买家标记已付款，等待卖家确认收款后转移低碳链</string>
+    <string name="format_chat_sysytem_notification_order_status_3">系统消息：订单编号%1s卖家已确认收款，低碳链已转移</string>
+    <string name="format_chat_sysytem_notification_order_status_4">系统消息：订单编号%1s买家已评价</string>
+    <string name="format_chat_sysytem_notification_order_status_5">系统消息：订单编号%1s卖家已评价</string>
+
+
+    <string name="format_html_code_1"><Data><![CDATA[  绑定银行卡需要短信确认，验证码已发送至手机：<font color="#D4AF72">%1s</font>，请按提示操作。]]></Data></string>
+
+    <string name="txt_complaints_tips1">投诉已提交</string>
+    <string name="txt_complaints_tips2">低碳派团队会尽快核实，感谢您的支持。</string>
+
+
+</resources>

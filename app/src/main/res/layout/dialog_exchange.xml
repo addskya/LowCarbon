@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.mylowcarbon.app.exchange.fragment.ExchangeResp" />
+
+        <variable
+            name="device"
+            type="com.mylowcarbon.app.exchange.Device" />
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.ui.ExchangeDialog" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        tools:context=".ui.ExchangeDialog">
+
+        <LinearLayout
+            android:id="@+id/ll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/layout_height_50"
+            android:layout_marginStart="@dimen/layout_height_50"
+            android:background="@drawable/dialog_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/layout_height_20"
+                android:layout_marginTop="@dimen/layout_height_20"
+                android:drawablePadding="3dp"
+                android:drawableRight="@drawable/ic_irrow_blue_right"
+                android:gravity="right"
+                android:onClick="@{() -> view.showRules()}"
+                android:text="详细规则"
+                android:textColor="@color/blue3" />
+
+            <TextView
+                style="@style/WhiteFontStyle.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_height_15"
+                android:layout_marginRight="@dimen/layout_height_20"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:text="@{data.date}" />
+
+            <TextView
+                style="@style/WhiteFontStyle.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_height_15"
+                android:layout_marginRight="@dimen/layout_height_20"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:text="@{view.getExchangeResultDesc(device)}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="@dimen/layout_height_10"
+                android:layout_marginEnd="@dimen/layout_height_15"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:background="@color/white" />
+
+            <TextView
+                style="@style/WhiteFontStyle.Middle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_height_15"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:layout_marginTop="@dimen/layout_height_15"
+                android:gravity="center_horizontal"
+                android:text="恭喜" />
+
+            <TextView
+                style="@style/WhiteFontStyle.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_height_15"
+                android:layout_marginRight="@dimen/layout_height_20"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:gravity="center_horizontal"
+                android:minWidth="600dp"
+                android:text="这是你运动获得能量值兑换的LCL" />
+
+            <ImageView
+                style="@style/WhiteFontStyle.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_height_15"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:src="@drawable/ic_coin_orange" />
+
+            <TextView
+                style="@style/WhiteFontStyle.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_height_20"
+                android:layout_marginEnd="@dimen/layout_height_15"
+                android:layout_marginRight="@dimen/layout_height_20"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:gravity="center_horizontal"
+                android:text="@{data.lcl}"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/btn_check"
+                style="@style/BlackFontStyle"
+                android:layout_width="100dp"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_marginBottom="@dimen/layout_height_20"
+                android:background="@drawable/bg_rect_rounded_orange"
+                android:onClick="@{() -> view.view()}"
+                android:paddingLeft="@dimen/layout_height_10"
+                android:paddingRight="@dimen/layout_height_10"
+                android:text="点击查看"
+                android:textColor="@color/black"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/layout_height_60"
+            android:background="@null"
+            android:onClick="@{() -> view.dismiss()}"
+            android:src="@drawable/ic_close_black" />
+    </RelativeLayout>
+</layout>

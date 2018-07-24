@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Non focused states -->
+
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="false">
+        <shape android:shape="oval">
+            <solid android:color="@color/orange2" />
+            <gradient android:endColor="@color/orange3" android:gradientRadius="50%p" android:startColor="@color/orange2" android:type="radial" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/orange2_transparent50" />
+            <gradient android:endColor="@color/orange3_transparent50" android:gradientRadius="50%p" android:startColor="@color/orange2_transparent50" android:type="radial" />
+
+        </shape>
+    </item>
+
+    <!-- Focused states -->
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="false">
+        <shape android:shape="oval">
+            <solid android:color="@color/orange2_transparent50" />
+            <gradient android:endColor="@color/orange3" android:gradientRadius="50%p" android:startColor="@color/orange2_transparent50" android:type="radial" />
+            <gradient android:endColor="@color/orange3_transparent50" android:gradientRadius="50%p" android:startColor="@color/orange2_transparent50" android:type="radial" />
+
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/orange2_transparent50" />
+            <gradient android:endColor="@color/orange3" android:gradientRadius="50%p" android:startColor="@color/orange2_transparent50" android:type="radial" />
+            <gradient android:endColor="@color/orange3_transparent50" android:gradientRadius="50%p" android:startColor="@color/orange2_transparent50" android:type="radial" />
+
+        </shape>
+    </item>
+
+    <!-- Pressed -->
+
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/orange2_transparent50" />
+            <gradient android:endColor="@color/orange3_transparent50" android:gradientRadius="50%p" android:startColor="@color/orange2_transparent50" android:type="radial" />
+
+        </shape>
+    </item>
+
+</selector>

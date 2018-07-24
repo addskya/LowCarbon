@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dataSource"
+            type="com.mylowcarbon.app.sport.SportDataSource" />
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.home.mine.MineContract.View" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="4dp">
+
+        <TextView
+            android:id="@+id/source"
+            style="@style/WhiteFontStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/text_sport_data_source" />
+
+        <com.mylowcarbon.app.ui.SimpleImageView
+            android:id="@+id/source_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/source"
+            android:contentDescription="@null"
+            app:actualImageScaleType="centerCrop"
+            app:src="@{dataSource.getSourceIcon()}" />
+
+        <TextView
+            android:id="@+id/data_source"
+            style="@style/WhiteFontStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/source_icon"
+            android:onClick="@{() -> view.showMenu()}"
+            android:text="@{dataSource.getSourceName()}" />
+
+        <include
+            layout="@layout/weather_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+</layout>

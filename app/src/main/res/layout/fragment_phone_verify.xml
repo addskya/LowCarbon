@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.register.phone.PhoneVerifyContract.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp">
+
+        <RelativeLayout
+            style="@style/InputStyle"
+            android:layout_marginTop="20dp"
+            android:onClick="@{() -> view.pickRegion()}">
+
+            <TextView
+                style="@style/LoginInput"
+                android:layout_marginTop="0dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="@string/text_region" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:drawableEnd="@drawable/ic_arrow"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="+86"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/account"
+            style="@style/LoginInput"
+            android:hint="@string/hint_phone_number"
+            android:inputType="phone"
+            android:maxLength="11">
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/action_btn_bg"
+            android:clickable="true"
+            android:enabled="false"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="@{() -> view.verifyPhoneNumber()}"
+            android:text="@string/text_reg"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_reg_protocol"
+                android:textColor="#999999"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:onClick="@{() -> view.showAppProtocol()}"
+                android:text="@string/text_app_protocol"
+                android:textColor="#302B2A" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Non focused states -->
+
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/layout_height_10" />
+            <stroke
+                android:width="1px"
+                android:color="@color/gray_lighter" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/layout_height_10" />
+            <stroke
+                android:width="1px"
+                android:color="@color/gray_lighter" />
+        </shape>
+    </item>
+
+    <!-- Focused states -->
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/layout_height_10" />
+            <stroke
+                android:width="1px"
+                android:color="@color/gray_lighter" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/layout_height_10" />
+            <stroke
+                android:width="1px"
+                android:color="@color/gray_lighter" />
+        </shape>
+    </item>
+
+    <!-- Pressed -->
+
+    <item android:state_pressed="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/orange_light" />
+            <corners android:radius="@dimen/layout_height_20" />
+        </shape>
+    </item>
+
+</selector>

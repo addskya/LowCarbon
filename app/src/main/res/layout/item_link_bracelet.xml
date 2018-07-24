@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="device"
+            type="com.mylowcarbon.app.model.BleDevices" />
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.bracelet.link.LinkBraceletContract.View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/layout_height_10"
+        android:paddingEnd="@dimen/layout_height_10"
+        android:paddingStart="@dimen/layout_height_10"
+        android:onClick="@{() -> view.onTapBleDevice(device)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_40"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:drawablePadding="@dimen/layout_height_10"
+                android:drawableStart="@drawable/ic_bracelet_orange"
+                android:gravity="start"
+                android:text="@{device.getDisplay()}" />
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="3dp"
+                android:drawableStart="@drawable/ic_online"
+                android:text="@string/text_online"
+                android:textColor="@color/green"
+                android:visibility="@{device.isOnline ? View.VISIBLE : View.GONE}" />
+
+            <Button
+                android:id="@+id/btn_online"
+                style="@style/WhiteFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/layout_height_30"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/layout_height_10"
+                android:layout_marginStart="@dimen/layout_height_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_black"
+                android:gravity="center"
+                android:onClick="@{() -> view.connectDevice(device)}"
+                android:text="@string/text_connect_online"
+                android:textColor="@color/gray_dark"
+                android:visibility="@{device.isOnline ? View.GONE : View.VISIBLE}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- 前天 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_10"
+                    android:layout_marginTop="@dimen/layout_height_20"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:drawableStart="@drawable/ic_color_beforeyesterday"
+                    android:text="@string/text_before_yesterday" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getStepText(device.beforeYesterday)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getRidingText(device.beforeYesterday)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_20"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getCalorieText(device.beforeYesterday)}" />
+            </LinearLayout>
+
+            <!-- 昨天 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_height_5"
+                android:layout_marginStart="@dimen/layout_height_5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_10"
+                    android:layout_marginTop="@dimen/layout_height_20"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:drawableStart="@drawable/ic_color_yesterday"
+                    android:text="@string/text_yesterday" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getStepText(device.yesterday)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getRidingText(device.yesterday)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_20"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getCalorieText(device.yesterday)}" />
+            </LinearLayout>
+
+            <!-- 今天 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_10"
+                    android:layout_marginTop="@dimen/layout_height_20"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:drawableStart="@drawable/ic_color_today"
+                    android:text="@string/text_today" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getStepText(device.today)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getRidingText(device.today)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_20"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getCalorieText(device.today)}" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

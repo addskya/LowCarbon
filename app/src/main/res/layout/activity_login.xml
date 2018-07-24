@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <import type="com.mylowcarbon.app.login.LoginContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/layout_height_40"
+        android:layout_marginStart="@dimen/layout_height_40">
+
+        <com.mylowcarbon.app.ui.SimpleImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/layout_height_90"
+            android:layout_height="@dimen/layout_height_90"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/layout_height_110"
+            android:contentDescription="@null"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@drawable/ic_app_launcher"
+            fresco:roundedCornerRadius="@dimen/layout_height_15"
+            fresco:placeholderImageScaleType="centerCrop"
+            android:src="@drawable/ic_app_launcher" />
+
+        <LinearLayout
+            android:id="@+id/loginPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/layout_height_50"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                style="@style/InputStyle"
+                android:onClick="@{() -> view.pickRegion()}">
+
+                <TextView
+                    style="@style/LoginInput"
+                    android:layout_marginTop="0dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:textColor="@color/text_black2"
+
+                    android:text="@string/text_chinese" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/layout_height_10"
+                    android:drawableEnd="@drawable/ic_arrow"
+                    android:drawablePadding="@dimen/layout_height_10"
+                    android:gravity="center_vertical"
+                    android:text="+86"
+                    android:textColor="@color/text_black2"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/account"
+                style="@style/LoginInput"
+                android:hint="@string/hint_account"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:layout_marginTop="@dimen/layout_height_10">
+
+                <requestFocus />
+            </EditText>
+
+            <!-- 自带右边眼睛的密码框 -->
+            <com.mylowcarbon.app.login.PasswordView
+                android:id="@+id/passwordView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_height_10" />
+
+            <RelativeLayout
+                android:id="@+id/verify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_height_20"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/verifyCode"
+                    style="@style/LoginInput"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/hint_verify_code"
+                    android:inputType="text" />
+
+                <com.mylowcarbon.app.login.VerifyCodeView
+                    android:id="@+id/verifyView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/layout_height_15"
+                    android:text="6J8H4" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:background="@drawable/action_btn_bg"
+                android:clickable="true"
+                android:enabled="false"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{() -> view.login()}"
+                android:text="@string/text_login"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/loginPanel"
+            android:layout_marginTop="@dimen/layout_height_25"
+            android:onClick="@{() -> view.gotoRegister()}"
+            android:text="@string/text_register"
+            android:textColor="@drawable/selector_txt_black2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/loginPanel"
+            android:layout_marginTop="@dimen/layout_height_25"
+            android:onClick="@{() -> view.gotoForgetPassword()}"
+            android:text="@string/text_forget_password"
+            android:textColor="@drawable/selector_txt_black2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/layout_height_25"
+            android:gravity="center"
+            android:lines="2"
+            android:text="@string/copy_right"
+            android:textColor="#999999" />
+
+
+    </RelativeLayout>
+
+</layout>

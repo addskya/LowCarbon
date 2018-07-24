@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.mine.walk.WalkContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+        <variable
+            name="dataSource"
+            type="com.mylowcarbon.app.sport.SportDataSource" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="@{dataSource.isSupportStepCounter() ? 1.0F : 0.5F}"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="@dimen/layout_height_250"
+            android:layout_height="@dimen/layout_height_250"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/layout_height_15"
+            android:gravity="center_horizontal">
+
+            <com.mylowcarbon.app.ui.customize.ArcProgress
+                android:id="@+id/arc_progress"
+                android:layout_width="@dimen/layout_height_250"
+                android:layout_height="@dimen/layout_height_250"
+                android:gravity="center_horizontal"
+                app:arc_angle="220"
+                app:arc_finished_color="@color/orange"
+                app:arc_max="5000"
+                app:arc_progress="4900"
+                app:arc_unfinished_color="@color/gray" />
+
+            <com.mylowcarbon.app.mine.walk.SimpleWalkView
+                android:id="@+id/tv_walkcount"
+                style="@style/BlackFontStyle.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="43dp"
+                android:textColor="@color/orange"
+                app:sportDataSource="@{dataSource}" />
+
+            <TextView
+                android:id="@+id/tv_tips1"
+                style="@style/WhiteFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_walkcount"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-5dp"
+                android:text="@string/text_walk_desc"
+                android:textSize="20sp" />
+
+            <com.mylowcarbon.app.mine.walk.CountDownSimpleWalkView
+                android:id="@+id/tv_tips2"
+                style="@style/WhiteFontStyle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_tips1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/layout_height_20"
+                android:background="@drawable/bg_rect_rounded_gray"
+                android:paddingBottom="@dimen/layout_height_10"
+                android:paddingEnd="@dimen/layout_height_20"
+                android:paddingStart="@dimen/layout_height_20"
+                android:paddingTop="@dimen/layout_height_10"
+                app:sportDataSource="@{dataSource}" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_135"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/layout_height_10"
+            android:layout_marginEnd="@dimen/layout_height_35"
+            android:layout_marginStart="@dimen/layout_height_35">
+
+            <com.mylowcarbon.app.mine.walk.WalkView
+                android:id="@+id/walk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                app:sportDataSource="@{dataSource}" />
+
+            <com.mylowcarbon.app.mine.walk.CalorieView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                app:sportDataSource="@{dataSource}" />
+
+            <com.mylowcarbon.app.mine.walk.PowerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                app:sportDataSource="@{dataSource}" />
+
+            <com.mylowcarbon.app.mine.walk.HeartRateView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/walk"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                app:sportDataSource="@{dataSource}" />
+
+            <com.mylowcarbon.app.mine.walk.BloodPressureView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:sportDataSource="@{dataSource}" />
+
+            <com.mylowcarbon.app.mine.walk.SleepView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                app:sportDataSource="@{dataSource}" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

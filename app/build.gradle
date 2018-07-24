@@ -1,0 +1,162 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        applicationId "com.mylowcarbon.app"
+        multiDexEnabled true
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+//            , "arm64-v8a", "x86","arm64-v8a","x86_64"
+          abiFilters "arm64-v8aeabi", "armeabi-v7a", "x86"
+//             abiFilters  "x86"
+//            abiFilters "armeabi", "armeabi-v7a"
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "c5aaaaec83e3d95cc579fb4f", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'lowcarbon'
+            keyPassword 'lowcarbon'
+            storePassword 'lowcarbon'
+            storeFile file('mylowcarbon-release-key.keystore.jks')
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            jniDebuggable true
+            minifyEnabled false
+            shrinkResources false
+            buildConfigField "int", "bugLevel", "0"
+        }
+
+        release {
+            debuggable false
+            jniDebuggable false
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "int", "bugLevel", "2"
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+        }
+    }
+    productFlavors {
+        Pro {
+            flavorDimensions "default"
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    // 更改编译输出APk名字为: LowCarbon_1.0.0.x.apk
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputName = "LowCarbon"
+            outputName += "_" + variant.versionName
+            outputName += ".apk"
+            output.outputFileName = outputName
+        }
+    }
+}
+
+greendao {
+    schemaVersion 1
+    targetGenDir 'src/main/java/'
+    daoPackage 'greendao'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-core:1.10.19"
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    // 添加项目依赖库
+    // RxJava,from https://github.com/ReactiveX/RxJava
+    implementation 'io.reactivex:rxandroid:1.2.1'
+
+    // Gson for json
+    implementation 'com.google.code.gson:gson:2.8.0'
+    // retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    // LeakCanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+    //GreenDao
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.6'
+    implementation 'org.greenrobot:greendao:3.2.2'
+
+    //PagerSlidingTabStrip
+    implementation 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    //仪表盘进度条
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+    //3D地图so及jar
+    //implementation 'com.amap.api:3dmap:latest.integration'
+    implementation 'com.amap.api:3dmap:6.1.0'
+    //定位功能
+    //implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.amap.api:location:3.8.0'
+    //PickerView
+    implementation 'com.contrarywind:Android-PickerView:3.2.7'
+
+    // 验证码输入控件
+    implementation 'com.justkiddingbaby:vercodeedittext:1.0.5'
+    //zxing二维码
+    implementation 'cn.yipianfengye.android:zxing-library:2.2'
+    //底部弹出框
+    implementation 'com.baoyz.actionsheet:library:1.1.7'
+    //阿里云上传
+    //implementation 'com.aliyun.dpa:oss-android-sdk:+'
+    implementation 'com.aliyun.dpa:oss-android-sdk:2.8.0'
+    //shswiperefreshlayout
+    implementation 'com.miomin:shswiperefreshlayout:1.3.0'
+
+    // facebook fresco
+    implementation('com.facebook.fresco:fresco:1.1.0') {
+        exclude module: 'bolts-android'
+    }
+    implementation 'com.facebook.fresco:animated-gif:1.1.0'
+    //极光IM
+    implementation 'cn.jiguang.sdk:jmessage:2.5.0'  // 此处以JMessage 2.5.0 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.1.9'  // 此处以JCore 1.1.9 版本为例。
+    //极光IM UI
+//    implementation 'cn.jiguang.imui:messagelist:0.4.7'
+//    implementation 'cn.jiguang.imui:chatinput:0.4.7'
+
+    implementation 'cn.jiguang.imui:messagelist:+'
+    implementation 'cn.jiguang.imui:chatinput:+'
+
+}

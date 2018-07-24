@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#2C2B29</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="titleColor">#757575</color>
+    <color name="titleColorSelected">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_transparent50">#80FFFFFF</color>
+
+    <!-- 象牙色 -->
+    <color name="lightyellow">#FFFFE0</color>
+    <!-- 桃色 -->
+    <color name="gold">#FFD700</color>
+
+    <color name="red">#FF0000</color>
+    <color name="gray">#F9F9F9</color>
+    <color name="black">#000001</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent50">#80000000</color>
+    <color name="transparent_gray">#8000</color>
+    <color name="transparent_white">#dcfafafa</color>
+    <color name="blue1">#01A5ED</color>
+    <color name="grey6sparent">#705B6275</color>
+    <color name="green">#9ACD32</color>
+    <color name="orange">#D4AF72</color>
+    <color name="orange2">#f0ce89</color>
+    <color name="orange3">#dcb26a</color>
+    <color name="orange4">#dcb26a</color>
+    <color name="orange5">#cc8c42</color>
+    <color name="orange6">#e8bf71</color>
+
+    <color name="orange3_transparent50">#80dcb26a</color>
+    <color name="orange2_transparent50">#80f0ce89</color>
+    <color name="orange_light">#F8F5EC</color>
+    <color name="orange_dark">#FF4800</color>
+
+
+    <color name="gray_lightest">#F7F7F7</color>
+    <color name="gray_lighter">#DADADA</color>
+    <color name="gray_light">#E7EDE9</color>
+    <color name="gray_dark">#999999</color>
+    <color name="gray_dark_transparent50">#80999999</color>
+    <color name="gray1">#252525</color>
+    <color name="gray2">#454856</color>
+    <color name="gray3">#a08d9e</color>
+    <color name="gray4">#353532</color>
+    <color name="gray5">#f8f8fa</color>
+    <color name="gray6">#dadada</color>
+    <color name="gray7">#dcdcdc</color>
+    <color name="gray8">#ebecf9</color>
+    <color name="gray9">#bdbdbe</color>
+
+    <color name="blue2">#8b8ec5</color>
+    <color name="blue3">#356efe</color>
+    <color name="blue4">#346dff</color>
+
+    <color name="text_black">#333333</color>
+    <color name="text_black3">#302b2a</color>
+    <color name="text_gray">#a5a5a5</color>
+    <color name="text_gray2">#cccccc</color>
+    <color name="text_black2">#555555</color>
+    <color name="text_white">#ebe9f4</color>
+
+    <color name="dialog_bg">#d0ffffff</color>
+    <color name="dialog_exception_bg">#ffffffff</color>
+    <color name="setting_bg_color">#00BBC1</color>
+    <color name="colorPrimaryDark_transparent50">#802C2B29</color>
+    <color name="purple">#8b81c5</color>
+
+
+</resources>

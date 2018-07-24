@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.exchange.fragment.ExchangeContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_lightest"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_60"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="@dimen/layout_height_10"
+                    android:paddingStart="@dimen/layout_height_10"
+                    android:text="@{view.getDeviceCountDesc()}"
+                    android:textColor="@color/text_black2" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="@dimen/layout_height_10"
+                    android:paddingStart="@dimen/layout_height_10"
+                    android:text="@{view.getEnergyDesc()}"
+                    android:textColor="@color/text_black2" />
+
+
+            </LinearLayout>
+
+            <Button
+                style="@style/BlackFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/layout_height_10"
+                android:background="@drawable/bg_rect_rounded_orange"
+                android:onClick="@{() -> view.exchangeAll()}"
+                android:paddingEnd="@dimen/layout_height_10"
+                android:paddingStart="@dimen/layout_height_10"
+                android:text="@string/text_exchange_all"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <com.mylowcarbon.app.ui.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/layout_height_5"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:divider_h="@drawable/divider_list"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        <TextView
+            style="@style/BlackFontStyle.Small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_40"
+            android:background="@color/white"
+            android:drawablePadding="@dimen/layout_height_5"
+            android:drawableStart="@drawable/ic_tips_orange"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/layout_height_10"
+            android:text="提示：最多可兑换前三天的运动挖矿"
+            android:textColor="@color/orange" />
+    </LinearLayout>
+
+</layout>

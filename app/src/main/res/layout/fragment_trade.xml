@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.home.trade.TradeContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_lightest"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/appBarLayout"
+            layout="@layout/action_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_40"
+            android:background="@color/gray4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_height_10"
+            android:paddingRight="@dimen/layout_height_10">
+
+            <TextView
+                style="@style/BlackFontStyle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_trade_avg_price"
+                android:textColor="@color/orange" />
+
+            <TextView
+                android:id="@+id/tv_avg_price"
+                style="@style/BlackFontStyle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/format_trade_avg_price"
+                android:textColor="@color/orange"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:onClick="@{()->view.showTradeRule()}"
+                android:src="@drawable/ic_info_orange" />
+        </LinearLayout>
+
+        <com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:guidance_text_color="@color/colorPrimary"
+            app:guidance_view_bg_color="@color/transparent"
+            app:load_text="@string/text_load"
+            app:progress_bar_color="@color/colorPrimary"
+            app:refresh_text="@string/text_refresh">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray_lightest"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/BlackFontStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="25dp"
+                                    android:layout_marginLeft="@dimen/layout_height_10"
+                                    android:layout_marginTop="@dimen/layout_height_10"
+                                    android:drawableLeft="@drawable/ic_color_orange"
+                                    android:drawablePadding="@dimen/layout_height_5"
+                                    android:text="@string/txt_trade_trend"
+                                    android:textColor="@color/text_black3" />
+
+                                <com.mylowcarbon.app.ui.customize.CurveTrend
+                                    android:id="@+id/curveTrend"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="250dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginLeft="0dp"
+                                    android:background="#ffffff"
+                                    app:broken_line_color="@color/orange"
+                                    app:straight_line_color="@color/gray_lighter"
+                                    app:select_bg_color="@color/gray5"
+                                    app:text_normal_color="@color/text_black3" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/layout_height_10"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/et_unit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/layout_height_40"
+                                    android:layout_weight="2"
+                                    android:background="@drawable/bg_rect_rounded_line_solid_gray2"
+                                    android:hint="请输入单价"
+                                    android:paddingLeft="@dimen/layout_height_10"
+                                    android:paddingRight="@dimen/layout_height_10"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="@color/text_black3"
+                                    android:textColorHint="@color/text_gray2" />
+
+                                <EditText
+                                    android:id="@+id/et_num"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/layout_height_40"
+                                    android:layout_marginLeft="@dimen/layout_height_10"
+                                    android:layout_marginRight="@dimen/layout_height_10"
+                                    android:layout_weight="2"
+                                    android:background="@drawable/bg_rect_rounded_line_solid_gray2"
+                                    android:hint="出售数量"
+                                    android:inputType="numberDecimal"
+                                    android:paddingLeft="@dimen/layout_height_10"
+                                    android:paddingRight="@dimen/layout_height_10"
+                                    android:textColor="@color/text_black3"
+                                    android:textColorHint="@color/text_gray2" />
+
+                                <Button
+                                    android:layout_width="@dimen/layout_height_80"
+                                    android:layout_height="@dimen/layout_height_40"
+                                    android:background="@drawable/bg_rect_solid_black"
+                                    android:onClick="@{() -> view.sell()}"
+                                    android:text="@string/txt_sell"
+                                    android:textColor="@color/white"
+
+                                    android:textSize="@dimen/layout_height_20" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:paddingRight="@dimen/layout_height_10">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_height_60"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/layout_height_10"
+                                android:paddingRight="@dimen/layout_height_10">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/txt_seller_nickname"
+                                        android:textColor="@color/gray_dark" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/txt_amount"
+                                        android:textColor="@color/gray_dark" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/txt_number"
+                                        android:textColor="@color/gray_dark" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/txt_total_amount"
+                                        android:textColor="@color/gray_dark" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/txt_sell"
+                                        android:textColor="@color/gray_dark" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="@color/gray6" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_below="@+id/rl_top"
+                        android:layout_marginTop="@dimen/layout_height_5"
+                        android:background="@color/white" />
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout>
+
+    </LinearLayout>
+</layout>

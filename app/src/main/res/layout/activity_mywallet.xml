@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.wallet.MyWalletContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+             layout="@layout/action_bar" />
+
+        <com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:guidance_text_color="@color/colorPrimary"
+            app:guidance_view_bg_color="@color/transparent"
+            app:load_text="@string/text_load"
+            app:progress_bar_color="@color/colorPrimary"
+            app:refresh_text="@string/text_refresh">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray_lightest"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/BlackFontStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/layout_height_35"
+                        android:layout_marginTop="@dimen/layout_height_15"
+                        android:drawablePadding="@dimen/layout_height_5"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="@dimen/layout_height_15"
+                        android:paddingRight="@dimen/layout_height_15"
+                        android:text="钱包地址：jdu1o1ene1cie1di1dj1k1msk1msk1sj"
+                        android:textColor="@color/text_black3"
+                        android:textIsSelectable="true"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/layout_height_20"
+                        android:layout_marginTop="@dimen/layout_height_5"
+                        android:gravity="right|center_vertical"
+                        android:onClick="@{() -> view.onViewClick(0)}"
+                        android:paddingLeft="@dimen/layout_height_15"
+                        android:paddingRight="@dimen/layout_height_15"
+                        android:text="复制钱包地址"
+                        android:textColor="@color/blue4"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/layout_height_15">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/layout_height_5"
+
+                            android:gravity="left"
+                            android:text="账户余额（LCL）"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tv_surplus_amount"
+
+                            style="@style/BlackFontStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_15"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:focusable="true"
+                            android:inputType="number"
+                            android:text="0"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/txt_size_middler" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/layout_height_20"
+                        android:paddingLeft="@dimen/layout_height_35"
+                        android:paddingRight="@dimen/layout_height_35">
+
+                        <TextView
+                            style="@style/BlackFontStyle.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="@dimen/layout_height_5"
+                            android:drawableTop="@drawable/ic_transfer_orange"
+                            android:gravity="center"
+                            android:onClick="@{() -> view.onViewClick(1)}"
+                            android:text="转账"
+                            android:textColor="@color/text_black2"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/BlackFontStyle.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="@dimen/layout_height_5"
+                            android:drawableTop="@drawable/ic_receipt_qr_orange"
+                            android:gravity="center"
+                            android:onClick="@{() -> view.onViewClick(2)}"
+                            android:text="收款二维码"
+                            android:textColor="@color/text_black2"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            style="@style/BlackFontStyle.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="@dimen/layout_height_5"
+                            android:drawableTop="@drawable/ic_receivingaccount_orange"
+                            android:gravity="center"
+                            android:onClick="@{() -> view.onViewClick(3)}"
+                            android:text="收款账号"
+                            android:textColor="@color/text_black2"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/BlackFontStyle.Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_height_10"
+                        android:background="@color/white"
+                        android:gravity="left"
+                        android:paddingBottom="@dimen/layout_height_10"
+                        android:paddingLeft="@dimen/layout_height_15"
+                        android:paddingRight="@dimen/layout_height_15"
+                        android:paddingTop="@dimen/layout_height_20"
+                        android:text="转账明细"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/gray_lightest"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/layout_height_15"
+                        android:paddingRight="@dimen/layout_height_15">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_date_range"
+
+                                style="@style/BlackFontStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:onClick="@{() -> view.onViewClick(1)}"
+                                android:text="本月"
+                                android:textColor="@color/text_black3"
+                                android:textStyle="normal" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="@dimen/layout_height_5"
+
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_income"
+
+                                    style="@style/BlackFontStyle.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> view.onViewClick(1)}"
+                                    android:text="@string/format_income"
+                                    android:textColor="@color/gray_dark"
+                                    android:textStyle="normal" />
+
+                                <TextView
+                                    android:id="@+id/tv_transfer"
+
+                                    style="@style/BlackFontStyle.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/layout_height_15"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> view.onViewClick(1)}"
+                                    android:text="@string/format_transfer"
+                                    android:textColor="@color/gray_dark"
+                                    android:textStyle="normal" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:onClick="@{() -> view.onViewClick(4)}"
+                            android:padding="@dimen/layout_height_10"
+                            android:src="@drawable/ic_pickdate_orange" />
+                    </RelativeLayout>
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginTop="@dimen/layout_height_5"
+                        android:background="@color/gray6" />
+
+
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+        </com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout>
+    </LinearLayout>
+
+</layout>

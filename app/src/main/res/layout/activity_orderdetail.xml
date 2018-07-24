@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.trade.order.OrderDetailContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/action_bar" />
+
+        <com.mylowcarbon.app.jiguang.ChatView
+            android:id="@+id/chat_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:guidance_text_color="@color/colorPrimary"
+                app:guidance_view_bg_color="@color/transparent"
+                app:load_text="@string/text_load"
+                app:progress_bar_color="@color/colorPrimary"
+                app:refresh_text="@string/text_refresh">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/nestedScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray_lightest"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_header"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_timeline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_below="@+id/rl_top"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/layout_height_5" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/layout_height_15"
+                                android:paddingLeft="@dimen/layout_height_10"
+                                android:paddingRight="@dimen/layout_height_10"
+                                android:paddingTop="@dimen/layout_height_10">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/layout_height_35"
+                                    android:background="@color/white"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="90dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:text="@string/txt_order_no"
+                                        android:textColor="@color/text_black3"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:id="@+id/tv_order_sn"
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/layout_height_15"
+                                        android:layout_marginRight="@dimen/layout_height_15"
+                                        android:layout_marginStart="@dimen/layout_height_15"
+                                        android:layout_weight="1"
+                                        android:text=""
+                                        android:textColor="@color/text_black2" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/layout_height_35"
+                                    android:background="@color/white"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="90dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:text="@string/txt_order_create_time"
+                                        android:textColor="@color/text_black3"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:id="@+id/tv_create_time"
+
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/layout_height_15"
+                                        android:layout_marginRight="@dimen/layout_height_15"
+                                        android:layout_marginStart="@dimen/layout_height_15"
+                                        android:layout_weight="1"
+                                        android:text=""
+                                        android:textColor="@color/text_black2" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/layout_height_35"
+                                    android:background="@color/white"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="90dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:text="@string/txt_order_buy_num"
+                                        android:textColor="@color/text_black3"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:id="@+id/tv_number"
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/layout_height_15"
+                                        android:layout_marginRight="@dimen/layout_height_15"
+                                        android:layout_marginStart="@dimen/layout_height_15"
+                                        android:layout_weight="1"
+                                        android:text=""
+                                        android:textColor="@color/text_black2" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/layout_height_35"
+                                    android:background="@color/white"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="90dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:text="@string/txt_amounts_payable"
+                                        android:textColor="@color/text_black3"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:id="@+id/tv_total_amount"
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/layout_height_15"
+                                        android:layout_marginRight="@dimen/layout_height_15"
+                                        android:text=""
+                                        android:textColor="@color/text_black2" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/layout_height_5"
+                                android:layout_marginTop="@dimen/layout_height_10"
+                                android:gravity="center_vertical"
+
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/layout_height_10">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="90dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:text="@string/txt_sell_receipt"
+                                        android:textColor="@color/text_black3"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:id="@+id/tv_receipt"
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/layout_height_15"
+                                        android:layout_marginRight="@dimen/layout_height_15"
+                                        android:text=""
+                                        android:textColor="@color/text_black2" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_operation"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="@dimen/layout_height_10"
+                                    android:paddingRight="@dimen/layout_height_20"
+                                    android:paddingTop="@dimen/layout_height_15"
+                                    android:visibility="visible">
+
+                                    <Button
+                                        android:id="@+id/btn_mark"
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="@dimen/layout_height_120"
+                                        android:layout_height="@dimen/layout_height_30"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/layout_height_40"
+                                        android:background="@drawable/bg_rect_rounded_orange3"
+                                        android:onClick="@{() -> view.mark()}"
+                                        android:text="@string/txt_tag_payed"
+
+                                        android:textColor="@color/white"
+                                        android:visibility="visible" />
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:onClick="@{() -> view.cancelDeal()}"
+                                        android:text="@string/txt_cancel_trade"
+                                        android:textColor="@color/blue3"
+                                        android:textStyle="normal" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_appraise"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/layout_height_50"
+                                    android:layout_marginTop="@dimen/layout_height_10"
+                                    android:background="@color/white"
+                                    android:gravity="center_vertical"
+                                    android:onClick="@{() -> view.appraise()}"
+
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/layout_height_10"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/layout_height_25"
+                                        android:layout_weight="1"
+                                        android:gravity="left|center_vertical"
+                                        android:text="交易成功，请评价卖家"
+                                        android:textColor="@color/text_black3"
+                                        android:textStyle="normal" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/layout_height_15"
+                                        android:layout_height="@dimen/layout_height_15"
+                                        android:gravity="left|center_vertical"
+                                        android:src="@drawable/ic_arrow" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_appraise_result"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/layout_height_50"
+                                    android:layout_marginTop="@dimen/layout_height_10"
+                                    android:background="@color/white"
+                                    android:gravity="center_vertical"
+                                    android:onClick="@{() -> view.appraise()}"
+
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/layout_height_10"
+                                    android:visibility="visible">
+
+                                    <TextView
+                                        android:id="@+id/tv_appraise_result"
+                                        style="@style/BlackFontStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/layout_height_25"
+                                        android:layout_weight="1"
+                                        android:gravity="left|center_vertical"
+                                        android:text="@string/txt_appraise_seller"
+                                        android:textColor="@color/text_black3"
+                                        android:textStyle="normal" />
+
+                                    <ImageView
+                                        android:layout_width="@dimen/layout_height_15"
+                                        android:layout_height="@dimen/layout_height_15"
+                                        android:gravity="left|center_vertical"
+                                        android:src="@drawable/ic_arrow" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!--<android.support.v7.widget.RecyclerView-->
+                        <!--android:id="@+id/rv_content"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="@dimen/layout_height_5" />-->
+
+                        <!--<include-->
+                        <!--layout="@layout/layout_im"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_width="match_parent"/>-->
+
+
+                        <cn.jiguang.imui.messages.MessageList
+                            android:layout_weight="1"
+                            android:layout_below="@+id/ll_header"
+                            android:layout_marginTop="@dimen/layout_height_10"
+                            android:background="@color/white"
+                            android:id="@+id/msg_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                             android:layout_marginBottom="100dp"
+                             app:showReceiverDisplayName="true"
+                            app:showSenderDisplayName="true"
+                            app:avatarHeight="40dp"
+                            app:avatarWidth="40dp"
+                            app:bubbleMaxWidth="0.70"
+                            app:dateTextSize="12sp"
+                            app:receiveBubblePaddingLeft="20dp"
+                            app:receiveBubblePaddingRight="20dp"
+                            app:receiveBubblePaddingTop="10dp"
+                            app:receiveBubblePaddingBottom="10dp"
+                            app:receiveTextColor="@color/text_black3"
+                             app:receiveTextSize="14sp"
+                            app:sendBubblePaddingLeft="20dp"
+                            app:sendBubblePaddingRight="20dp"
+                            app:sendBubblePaddingTop="10dp"
+                            app:sendBubblePaddingBottom="10dp"
+                            app:sendTextColor="@color/white"
+                            app:sendTextSize="14sp"
+                            app:sendBubbleDrawable="@drawable/bg_rect_rounded_purple2"
+                            app:receiveBubbleDrawable="@drawable/bg_rect_rounded_gray2"/>
+
+
+                    </LinearLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+
+            </com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout>
+
+            <cn.jiguang.imui.chatinput.ChatInputView
+                android:id="@+id/chat_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:cameraBtnIcon="@drawable/aurora_menuitem_camera"
+                app:inputCursorDrawable="@drawable/aurora_edittext_cursor_bg"
+                app:inputEditTextBg="@drawable/aurora_edittext_bg"
+                app:inputHint="@string/chat_input_hint"
+                app:inputTextSize="@dimen/txt_size_normal"
+                app:showSelectAlbum="false"
+                app:photoBtnIcon="@drawable/aurora_menuitem_photo"
+                app:sendBtnIcon="@drawable/aurora_menuitem_send"
+                app:voiceBtnIcon="@drawable/aurora_menuitem_mic" />
+        </com.mylowcarbon.app.jiguang.ChatView>
+
+    </LinearLayout>
+</layout>

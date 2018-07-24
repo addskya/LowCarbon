@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    tools:context=".ui.ExchangeDialog">
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/layout_height_50"
+        android:layout_marginStart="@dimen/layout_height_50"
+        android:background="@drawable/dialog_bg"
+        android:paddingTop="@dimen/layout_height_20"
+
+
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/WhiteFontStyle"
+            android:layout_marginEnd="@dimen/layout_height_15"
+            android:layout_marginStart="@dimen/layout_height_15"
+             android:layout_marginBottom="@dimen/layout_height_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="评价详情"  />
+
+        <RadioGroup
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/layout_height_25"
+            android:paddingRight="@dimen/layout_height_25"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/comment_type1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:checked="true"
+                android:button="@drawable/selector_rg"
+                android:drawablePadding="@dimen/layout_height_5"
+                android:drawableLeft="@drawable/selector_rg"
+                android:background="@null"
+                android:text="@string/txt_appraise_1" />
+
+            <RadioButton
+                android:id="@+id/comment_type2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_height_30"
+                android:layout_marginBottom= "@dimen/layout_height_30"
+                android:textColor="@color/white"
+                android:button="@drawable/selector_rg"
+                android:drawablePadding="@dimen/layout_height_5"
+                android:drawableLeft="@drawable/selector_rg"
+
+                android:text="@string/txt_appraise_2" />
+            <RadioButton
+                android:id="@+id/comment_type3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:button="@drawable/selector_rg"
+                android:drawablePadding="@dimen/layout_height_5"
+                android:drawableLeft="@drawable/selector_rg"
+
+                android:text="@string/txt_appraise_3" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/layout_height_30"
+             android:text="备注"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:paddingLeft="@dimen/layout_height_25"
+            android:paddingRight="@dimen/layout_height_25"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/remark"
+            android:layout_marginLeft="@dimen/layout_height_25"
+            android:layout_marginRight="@dimen/layout_height_25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/layout_height_135"
+             android:background="@drawable/bg_rect_rounded_white"
+            android:padding="@dimen/layout_height_15"
+            android:layout_marginTop="@dimen/layout_height_15"
+            android:gravity="top"
+            android:focusable="true"
+            android:hint="请输入你的备注"
+            android:inputType="text"
+            android:textColor="@color/text_black3"
+            android:textColorHint="@color/text_gray2"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="@dimen/layout_height_20"
+            android:background="@color/gray9" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/negative"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_confirm_negative_bg"
+                android:gravity="center"
+                android:text="@string/text_cancel"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/positive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_confirm_positive_bg"
+                android:gravity="center"
+                android:text="提交评价"
+                android:textStyle="bold"
+
+                android:textColor="@color/gold"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

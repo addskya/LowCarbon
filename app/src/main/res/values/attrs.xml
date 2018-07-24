@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CurveTrend">
+        <attr name="max_score"
+              format="integer" />
+        <attr name="min_score"
+              format="integer" />
+        <attr name="broken_line_color"
+              format="color" />
+        <attr name="straight_line_color"
+              format="color" />
+        <attr name="text_normal_color"
+              format="color" />
+        <attr name="select_point_color"
+              format="color" />
+        <attr name="select_bg_color"
+              format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PasswordView">
+        <attr name="hint"
+              format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RecyclerView">
+        <attr name="divider_h"
+              format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsView">
+        <!-- 配置项的名字 -->
+        <attr name="name" format="string|reference" />
+        <attr name="thumb" format="reference" />
+
+        <!-- 右边的箭头图标是否显示 -->
+        <attr name="arrow" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsIconView">
+        <!-- 右侧的图标,如头像-->
+        <attr name="imageUri" format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SimpleImageView">
+        <attr name="src" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="PasswordInputView">
+        <attr name="pivBorderColor" format="color"/>
+        <attr name="pivBorderWidth" format="dimension"/>
+        <attr name="pivBorderRadius" format="dimension"/>
+        <attr name="pivPasswordColor" format="color"/>
+        <attr name="pivPasswordWidth" format="dimension"/>
+        <attr name="pivPasswordRadius" format="dimension"/>
+        <attr name="pivPasswordLength" format="integer"/>
+    </declare-styleable>
+
+
+</resources>

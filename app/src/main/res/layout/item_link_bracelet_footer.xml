@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.bracelet.link.LinkBraceletContract.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="@dimen/layout_height_5"
+            android:drawableStart="@drawable/ic_plus_orange"
+            android:gravity="center"
+            android:minHeight="@dimen/layout_height_30"
+            android:onClick="@{() -> view.addBracelet()}"
+            android:text="@string/text_add_bracelet"
+            android:textColor="@drawable/selector_tab_title_color"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+</layout>

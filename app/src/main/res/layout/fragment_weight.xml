@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.register.weight.WeightContract.View" />
+
+        <variable
+            name="pickMode"
+            type="boolean" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_gender_male" />
+
+        <TextView
+            android:id="@+id/weight_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
+
+        <com.bigkoo.pickerview.lib.WheelView
+            android:id="@+id/selector"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            app:pickerview_textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="@{pickMode ? View.GONE : View.VISIBLE}">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/account_bg"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{() -> view.previous()}"
+                android:padding="0dp"
+                android:text="@string/text_previous"
+                android:textColor="@color/titleColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/action_btn_bg"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:onClick="@{() -> view.commit()}"
+                android:text="@string/text_ok"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="@{pickMode ? View.VISIBLE : View.GONE}" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/action_btn_bg"
+            android:gravity="center"
+            android:minHeight="50dp"
+            android:onClick="@{() -> view.commit()}"
+            android:orientation="horizontal"
+            android:text="@string/text_ok"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</layout>

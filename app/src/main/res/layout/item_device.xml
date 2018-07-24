@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="device"
+            type="com.mylowcarbon.app.bracelet.own.Device" />
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.bracelet.own.DevicesContract.View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/layout_height_10"
+        android:paddingEnd="@dimen/layout_height_10"
+        android:paddingStart="@dimen/layout_height_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_40"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/layout_height_10"
+                android:drawableStart="@drawable/ic_bracelet_orange"
+                android:text="@{device.nickname}" />
+
+            <Button
+                android:id="@+id/btn_edit"
+                style="@style/WhiteFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height_30"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/layout_height_5"
+                android:layout_marginStart="@dimen/layout_height_5"
+                android:background="@drawable/bg_rect_rounded_line_solid_black"
+                android:gravity="center"
+                android:text="@string/text_edit_device_name"
+                android:textColor="@color/gray_dark" />
+
+            <Button
+                android:id="@+id/btn_online"
+                style="@style/WhiteFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height_30"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/layout_height_5"
+                android:layout_marginStart="@dimen/layout_height_5"
+                android:background="@drawable/bg_rect_rounded_line_solid_black"
+                android:gravity="center"
+                android:text="@string/text_connect_online"
+                android:textColor="@color/gray_dark" />
+
+            <Button
+                android:id="@+id/btn_untie"
+                style="@style/WhiteFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height_30"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/layout_height_5"
+                android:layout_marginStart="@dimen/layout_height_5"
+                android:background="@drawable/bg_rect_rounded_line_solid_black"
+                android:gravity="center"
+                android:text="@string/text_unbind_device"
+                android:textColor="@color/gray_dark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_10"
+                    android:layout_marginTop="@dimen/layout_height_20"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:drawableStart="@drawable/ic_color_beforeyesterday"
+                    android:text="@string/text_before_yesterday" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getStepText(device, -2)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getRidingText(device, -2)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_20"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getCalorieText(device, -2)}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rv_content"
+                android:layout_marginEnd="@dimen/layout_height_5"
+                android:layout_marginStart="@dimen/layout_height_5"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_10"
+                    android:layout_marginTop="@dimen/layout_height_20"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:drawableStart="@drawable/ic_color_yesterday"
+                    android:text="@string/text_yesterday" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getStepText(device, -1)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getRidingText(device, -1)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_20"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getCalorieText(device, -1)}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_10"
+                    android:layout_marginTop="@dimen/layout_height_20"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:drawableStart="@drawable/ic_color_today"
+                    android:text="@string/text_today" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getStepText(device, 0)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getRidingText(device, 0)}" />
+
+                <TextView
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_height_20"
+                    android:layout_marginStart="@dimen/layout_height_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{view.getCalorieText(device, 0)}" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.wallet.scan.ScanningContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+
+            layout="@layout/action_bar" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:id="@+id/fl_my_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                 android:visibility="visible">
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/btn_photo"
+                style="@style/WhiteFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginTop="@dimen/layout_height_90"
+                android:background="@drawable/bg_rect_rounded_line_solid_transparent"
+                android:paddingLeft="@dimen/layout_height_10"
+                android:paddingRight="@dimen/layout_height_10"
+                android:text="从相册选取二维码"
+                android:onClick="@{() -> view.onViewClick(0)}"
+
+                android:textColor="@color/white" />
+
+            <TextView
+                style="@style/WhiteFontStyle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_photo"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/layout_height_300"
+                android:text="将设备的二维码放入框内，即可自动扫描"
+                android:textColor="@color/gray_dark"
+                android:textStyle="normal" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

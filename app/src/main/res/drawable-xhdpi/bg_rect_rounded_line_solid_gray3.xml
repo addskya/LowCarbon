@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Non focused states -->
+
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/transparent" />
+            <corners android:radius="@dimen/layout_height_5" />
+            <stroke
+                android:width="2px"
+                android:color="@color/gray_dark" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/transparent" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="2px"
+                android:color="@color/gray_dark_transparent50" />
+        </shape>
+    </item>
+
+    <!-- Focused states -->
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/transparent" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="2px"
+                android:color="@color/orange4" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/transparent" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="2px"
+                android:color="@color/gray_dark_transparent50" />
+        </shape>
+    </item>
+
+    <!-- Pressed -->
+
+    <item android:state_pressed="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/transparent" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="2px"
+                android:color="@color/gray_dark_transparent50" />
+        </shape>
+    </item>
+
+</selector>

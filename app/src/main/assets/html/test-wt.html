@@ -1,0 +1,179 @@
+<!doctype>
+<html>
+
+<head>
+    <script type="text/javascript" src="../api/web3.min.js"></script>
+    <script type="text/javascript" src="../api/ctoken.min.js"></script>
+<script type="text/javascript">
+//var URL = "http://192.168.85.128:8545/";
+var URL = "ws://47.100.55.67:8546/";
+//var URL = "ws://192.168.85.128:8546";
+var contract = "0x4230deEe19c832D6e7F2AaC175427c7eEB5E04eC";
+
+var mycoin = new CToken(URL, contract);
+
+var bool = mycoin.initCToken();
+    console.log("################## mycoin.initCToken() : "+bool);
+
+var address1 = "0x3ae6158efa1d54882490879bafa4a02e901afd67";
+var address2 = "0x50787be53b6f5383a650b2b585a7f51a76972a6b";
+var owner_addr = "0xf606a91f7e929bc14794c26a9c6da9dba1b503cf";
+
+function testWallet(password){
+    address1 = mycoin.createWallet("wallet1",password);
+    console.log(address1);	
+	address2 = mycoin.createWallet("wallet2","1q2w3e4r5t6y");
+    console.log(address2);
+	
+	var private_address1 = mycoin.loadWallet("wallet1", password, address1);
+	console.log(address1 , " private key:", private_address1);
+
+	var private_address2 = mycoin.loadWallet("wallet2", "1q2w3e4r5t6y", address2);
+	console.log(address2, " private key:", private_address2);
+
+
+	var json = '[{"address":"f606a91f7e929bc14794c26a9c6da9dba1b503cf","crypto":{"cipher":"aes-128-ctr","ciphertext":"3544ea7416b7991bca0ce83ac4980e9c1315ded8e27a4b4e8346376f2fd28377","cipherparams":{"iv":"e07352052588595581ebc6bfab797db0"},"kdf":"scrypt","kdfparams":{"dklen":32,"n":262144,"p":1,"r":8,"salt":"447aaeb6e8aec6cb2a07914bf1680a34f3cc56124ea29586f05dea9c0510b2f3"},"mac":"7f74dfb487abe154ccd777daee64ad7b71592a6300a86dbf4c481a53ad307b6a"},"id":"28ab5388-d6ba-4593-8146-327b106afa33","version":3}]';
+
+	owner_addr = mycoin.importWallet("wallet_owner", json, '111');
+}
+
+function testTransfer(){
+	var from = owner_addr; 
+	var to= address1; 
+	var value = 3.0;
+
+	var prevBalanceFrom, prevBalanceTo, fromBalance, toBalance;
+
+	function callback_balanceOfToNow(error, result){
+		toBalance = result;
+		console.log("toBalance: ", toBalance);
+		console.log("success", prevBalanceFrom, " ", prevBalanceTo, " ", fromBalance, " ", toBalance);
+	}
+
+	function callback_balanceOfFromNow(error, result){
+		fromBalance = result;
+		console.log("fromBalance: ", fromBalance);
+		mycoin.balanceOf(to, callback_balanceOfToNow);
+	}
+
+	function callback_transfer(error, result){
+		console.log("transfer TXID: ", result);	
+		mycoin.balanceOf(from, callback_balanceOfFromNow);
+	}
+
+	function callback_balanceOfTo(error, result){
+		prevBalanceTo = result;
+		if(prevBalanceFrom < value){
+			console.log(from, " balance: ", prevBalanceFrom, "less than ", value);
+			return;
+		}
+		console.log("prevBalanceTo: ", prevBalanceTo);
+		mycoin.transfer("wallet_owner", "111", from, to, value, callback_transfer);
+	}
+
+	function callback_balanceOfFrom(error, result){
+		prevBalanceFrom = result;
+		console.log("prevBalanceFrom: ", prevBalanceFrom);
+		mycoin.balanceOf(to, callback_balanceOfTo);
+	}
+	
+	mycoin.balanceOf(from, callback_balanceOfFrom);
+}
+
+function testTransferByFee(){
+
+	var to = address1; 
+	var from =  owner_addr;
+	var value = 6.0;
+
+	var prevBalanceFrom, prevBalanceTo, fromBalance, toBalance;
+
+	function callback_balanceOfToNow(error, result){
+		toBalance = result;
+		console.log("toBalance: ", toBalance);
+		console.log("success", prevBalanceFrom, " ", prevBalanceTo, " ", fromBalance, " ", toBalance);
+	}
+
+	function callback_balanceOfFromNow(error, result){
+		fromBalance = result;
+		console.log("fromBalance: ", fromBalance);
+		mycoin.balanceOf(to, callback_balanceOfToNow);
+	}
+
+	function callback_transferByFee(error, result){
+		console.log("transfer TXID: ", result);	
+		mycoin.balanceOf(from, callback_balanceOfFromNow);
+	}
+
+	function callback_balanceOfTo(error, result){
+		prevBalanceTo = result;
+		if(prevBalanceFrom < value){
+			console.log(from, " balance: ", prevBalanceFrom, "less than ", value);
+			return;
+		}
+		console.log("prevBalanceTo: ", prevBalanceTo);
+		mycoin.transferByFee("wallet_owner", "111", from, to, value, callback_transferByFee);
+	}
+
+	function callback_balanceOfFrom(error, result){
+		prevBalanceFrom = result;
+		console.log("prevBalanceFrom: ", prevBalanceFrom);
+		mycoin.balanceOf(to, callback_balanceOfTo);
+	}
+	
+	mycoin.balanceOf(from, callback_balanceOfFrom);
+}
+
+function testBalanceOwner() {
+	var owner = mycoin.contractOwner;
+	
+	function callback_owner(error, result){
+		console.log("remainder fund: "+result);
+	}
+	mycoin.balanceOf(owner, callback_owner);
+	
+}
+
+function testHistory(){
+	var addr  =  address1;
+
+	function callback_showHistoryTransaction(error, result){
+
+		console.log("error : "+ error);
+		console.log(" result.length: "+ result.length);
+
+		for(var i = 0; i < result.length; i++){
+			console.log("from: ", result[i].from, " to: ", result[i].to, " value: ", result[i].value, " time: ", result[i].time);
+		}	
+	}
+    mycoin.showHistoryTransactions(addr, callback_showHistoryTransaction);
+
+}
+
+</script>
+</head>
+<body>
+	<h5>test wallet</h5>
+	<button type="test wallet" onClick="testWallet('Abcd123456');">test Wallet</button>
+    <div></div>
+
+
+	<h5>test transfer</h5>
+    <button type="test Transfer" onClick="testTransfer();">test Transfer</button>
+    <div></div>
+
+	<h5>test transferByFee</h5>
+    <button type="test TransferByFee" onClick="testTransferByFee();">test TransferByFee</button>
+    <div></div>
+
+	<h5>test balanceOwner</h5>
+    <button type="test balanceOwner" onClick="testBalanceOwner();">test BalanceOwner</button>
+    <div></div>
+
+	<h5>test showHistory</h5>
+    <button type="test showHistory" onClick="testHistory();">test showHistory</button>
+    <div></div>
+
+</body>
+</html>
+

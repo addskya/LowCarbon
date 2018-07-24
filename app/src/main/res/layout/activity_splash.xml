@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.splash.SplashContract.View" />
+
+
+        <variable
+            name="view"
+            type="View" />
+
+        <variable
+            name="logo"
+            type="com.mylowcarbon.app.splash.Logo" />
+
+    </data>
+
+    <com.mylowcarbon.app.ui.SimpleImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:imageURI="@{logo.getLogoImageUri()}"
+        fresco:placeholderImage="@drawable/bg_splash_1"
+        fresco:placeholderImageScaleType="centerCrop" />
+
+</layout>

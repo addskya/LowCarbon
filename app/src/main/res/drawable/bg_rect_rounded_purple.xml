@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Non focused states -->
+
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/purple" />
+
+            <corners android:radius="@dimen/layout_height_10" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/purple" />
+
+            <corners android:radius="@dimen/layout_height_20" />
+        </shape>
+    </item>
+
+    <!-- Focused states -->
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/purple" />
+            <gradient android:startColor="@color/orange2_transparent50" android:type="radial" android:gradientRadius="50%p" android:endColor="@color/orange3_transparent50" />
+
+            <corners android:radius="@dimen/layout_height_20" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/purple" />
+
+            <corners android:radius="@dimen/layout_height_20" />
+        </shape>
+    </item>
+
+    <!-- Pressed -->
+
+    <item android:state_pressed="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/purple" />
+
+            <corners android:radius="@dimen/layout_height_20" />
+        </shape>
+    </item>
+
+</selector>

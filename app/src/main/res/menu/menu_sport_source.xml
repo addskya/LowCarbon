@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sport_source_phone"
+        android:enabled="true"
+        android:title="@string/text_sport_source_phone"
+        android:visible="true" />
+
+    <item
+        android:id="@+id/sport_source_bracelet"
+        android:enabled="true"
+        android:title="@string/text_sport_source_bracelet"
+        android:visible="true" />
+</menu>

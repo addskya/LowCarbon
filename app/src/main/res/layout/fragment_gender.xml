@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.register.gender.GenderContract.View" />
+
+        <variable
+            name="pickMode"
+            type="boolean" />
+
+        <variable
+            name="userInfo"
+            type="com.mylowcarbon.app.model.UserInfo" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/gender_group"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.mylowcarbon.app.ui.SimpleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:contentDescription="@string/text_male"
+                fresco:placeholderImage="@drawable/ic_gender_male"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:button="@drawable/selector_rg"
+                android:checked="@{userInfo.gender == 1}"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:text="@string/text_male"
+                android:textSize="20sp" />
+
+            <com.mylowcarbon.app.ui.SimpleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="50dp"
+                android:contentDescription="@string/text_female"
+                fresco:actualImageUri="UriOfImage"
+                fresco:placeholderImage="@drawable/ic_gender_female"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:button="@drawable/selector_rg"
+                android:checked="@{userInfo.gender == 2}"
+                android:gravity="center"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:text="@string/text_female"
+                android:textSize="25sp" />
+
+        </RadioGroup>
+
+        <Button
+            style="@style/LoginInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/action_btn_bg"
+            android:gravity="center"
+            android:onClick="@{() -> view.commit()}"
+            android:text="@{pickMode? @string/text_ok:@string/text_next}"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.email.BindEmailContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/action_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:background="@drawable/double_line"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_50"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="@dimen/layout_height_15"
+                android:paddingStart="@dimen/layout_height_15">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="@dimen/layout_height_80"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:gravity="start"
+                    android:text="@string/text_email"
+                    android:textColor="@color/text_black3"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/layout_height_15"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:hint="@string/hint_email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/text_black3"
+                    android:textColorHint="@color/text_gray2"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <include layout="@layout/settings_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_50"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="@dimen/layout_height_15"
+                android:paddingStart="@dimen/layout_height_15">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="@dimen/layout_height_80"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:gravity="start"
+                    android:text="@string/text_verify_code"
+                    android:textColor="@color/text_black3"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/verify_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/layout_height_15"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:hint="@string/hint_email_verify_code"
+                    android:inputType="text"
+                    android:textColor="@color/text_black3"
+                    android:textColorHint="@color/text_gray2"
+                    android:textSize="16sp" />
+
+                <Button
+                    style="@style/BlackFontStyle"
+                    android:layout_width="@dimen/layout_height_80"
+                    android:layout_height="@dimen/layout_height_30"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="@dimen/layout_height_5"
+                    android:background="@drawable/bg_rect_rounded_line_solid_gray3"
+                    android:gravity="center"
+                    android:onClick="@{() -> view.sendVerifyCode()}"
+                    android:text="@string/text_send_verify_code"
+                    android:textColor="@color/gray_dark" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            style="@style/BlackFontStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_40"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/layout_height_30"
+            android:layout_marginEnd="@dimen/layout_height_50"
+            android:layout_marginStart="@dimen/layout_height_50"
+            android:layout_marginTop="@dimen/layout_height_20"
+            android:background="@drawable/action_btn_bg"
+            android:onClick="@{() -> view.commit()}"
+            android:text="@string/text_sure"
+            android:textColor="@color/white"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</layout>

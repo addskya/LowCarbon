@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:paddingRight="@dimen/layout_height_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_60"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_height_10"
+            android:paddingRight="@dimen/layout_height_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_nick_name"
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卖家昵称"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/text_black3" />
+                <TextView
+                    android:id="@+id/tv_trade_num"
+                    style="@style/BlackFontStyle.Smallest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="成交率 60%"
+                    android:ellipsize="end"
+                    android:lines="1" 
+                    android:textColor="@color/text_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="单价"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/text_black2" />
+                <TextView
+                    android:id="@+id/tv_success_trade_num"
+                    style="@style/BlackFontStyle.Smallest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="成功次数:60"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/text_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="数量"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/text_black2" />
+                <TextView
+                    android:id="@+id/tv_success_trade_rate"
+
+                    style="@style/BlackFontStyle.Smallest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="成功率:60%"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/text_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_total_amount"
+                    style="@style/BlackFontStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总金额"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/text_black2" />
+                <TextView
+                    android:id="@+id/tv_good_comment_rate"
+
+                    style="@style/BlackFontStyle.Smallest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="好评率:60%"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/text_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_exchange"
+                    style="@style/BlackFontStyle"
+                    android:layout_width="@dimen/layout_height_60"
+                    android:layout_height="@dimen/layout_height_35"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="@dimen/layout_height_5"
+                    android:paddingLeft="@dimen/layout_height_5"
+                    android:background="@drawable/bg_rect_rounded_orange3"
+                    android:text="@string/txt_buy"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

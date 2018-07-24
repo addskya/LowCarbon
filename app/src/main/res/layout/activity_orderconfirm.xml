@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.trade.sell.OrderConfirmContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+             layout="@layout/action_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/layout_height_10"
+
+                android:background="@color/gray_lightest"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/layout_height_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/txt_sell_num"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tv_num"
+                            style="@style/BlackFontStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_15"
+                            android:layout_marginRight="@dimen/layout_height_15"
+                            android:layout_marginStart="@dimen/layout_height_15"
+                            android:layout_weight="1"
+                            android:text="100"
+                            android:textColor="@color/text_black2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/txt_sell_price"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tv_price"
+
+                            style="@style/BlackFontStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_15"
+                            android:layout_marginRight="@dimen/layout_height_15"
+                            android:layout_marginStart="@dimen/layout_height_15"
+                            android:layout_weight="1"
+                            android:text="¥2.5"
+                            android:textColor="@color/orange_dark" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/txt_sell_fees"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tv_fees"
+                            style="@style/BlackFontStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_15"
+                            android:layout_marginRight="@dimen/layout_height_15"
+                            android:layout_marginStart="@dimen/layout_height_15"
+                            android:layout_weight="1"
+                            android:text="¥5.00"
+                            android:textColor="@color/text_black2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="@string/txt_sell_receipt"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tv_receipt"
+                            style="@style/BlackFontStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_15"
+                            android:layout_marginRight="@dimen/layout_height_15"
+                            android:text="@string/format_sell_receipt_alipay"
+                            android:textColor="@color/text_black2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_30"
+                        android:layout_marginBottom="@dimen/layout_height_10"
+                        android:layout_marginRight="@dimen/layout_height_20"
+                        android:layout_marginTop="@dimen/layout_height_10"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:onClick="@{() -> view.updateReceivingAccount()}"
+                            android:text="@string/txt_update_receipt"
+                            android:textColor="@color/blue3"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/layout_height_10"
+                    android:paddingTop="@dimen/layout_height_10">
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/txt_sell_time"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        style="@style/BlackFontStyle.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginRight="@dimen/layout_height_15"
+                        android:text="@string/txt_sell_time_tips"
+                        android:textColor="@color/text_black2" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:clickable="true"
+                        android:onClick="@{() -> view.onClickDay(1)}"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:focusable="false"
+                            android:inputType="none"
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_80"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/txt_today"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(1)}"
+
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:id="@+id/tv_day1_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:background="@null"
+                            android:hint="@string/txt_start_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_30"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_to"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(1)}"
+
+                            android:id="@+id/tv_day1_end"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="@string/txt_end_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_20"
+                            android:paddingRight="@dimen/layout_height_20"
+                            android:src="@drawable/ic_arrow" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> view.onClickDay(2)}"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_80"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/txt_tomorrow"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(2)}"
+
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:id="@+id/tv_day2_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:background="@null"
+                            android:hint="@string/txt_start_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_30"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_to"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(2)}"
+
+                            android:id="@+id/tv_day2_end"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="@string/txt_end_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_20" android:paddingRight="@dimen/layout_height_20"
+                            android:src="@drawable/ic_arrow" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> view.onClickDay(3)}"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_80"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/txt_third_day"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(3)}"
+
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:id="@+id/tv_day3_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:background="@null"
+                            android:hint="@string/txt_start_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_30"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_to"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(3)}"
+
+                            android:id="@+id/tv_day3_end"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="@string/txt_end_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_20" android:paddingRight="@dimen/layout_height_20"
+                            android:src="@drawable/ic_arrow" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> view.onClickDay(4)}"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_80"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/txt_fourth_day"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(4)}"
+
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:id="@+id/tv_day4_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:background="@null"
+                            android:hint="@string/txt_start_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_30"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_to"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(4)}"
+
+                            android:id="@+id/tv_day4_end"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="@string/txt_end_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_20" android:paddingRight="@dimen/layout_height_20"
+                            android:src="@drawable/ic_arrow" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> view.onClickDay(5)}"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_80"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/txt_fifth_day"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(5)}"
+
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:id="@+id/tv_day5_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:background="@null"
+                            android:hint="@string/txt_start_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_30"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_to"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(5)}"
+
+                            android:id="@+id/tv_day5_end"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="@string/txt_end_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_20" android:paddingRight="@dimen/layout_height_20"
+                            android:src="@drawable/ic_arrow" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:onClick="@{() -> view.onClickDay(6)}"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_80"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/txt_sixth_day"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(6)}"
+
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:id="@+id/tv_day6_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:background="@null"
+                            android:hint="@string/txt_start_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_30"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_to"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(6)}"
+
+                            android:id="@+id/tv_day6_end"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="@string/txt_end_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_20" android:paddingRight="@dimen/layout_height_20"
+                            android:src="@drawable/ic_arrow" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_50"
+                        android:background="@color/white"
+                        android:onClick="@{() -> view.onClickDay(7)}"
+
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_80"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:text="@string/txt_seventh_day"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(7)}"
+
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:id="@+id/tv_day7_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:background="@null"
+                            android:hint="@string/txt_start_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            style="@style/BlackFontStyle"
+                            android:layout_width="@dimen/layout_height_30"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/txt_to"
+                            android:textColor="@color/text_black3"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:onClick="@{() -> view.onClickDay(7)}"
+
+                            android:id="@+id/tv_day7_end"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_40"
+                            android:layout_marginLeft="@dimen/layout_height_10"
+                            android:layout_marginRight="@dimen/layout_height_10"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="@string/txt_end_time"
+                            android:paddingLeft="@dimen/layout_height_10"
+                            android:paddingRight="@dimen/layout_height_10"
+                            android:textColor="@color/text_black3"
+                            android:textColorHint="@color/text_gray2"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/layout_height_20" android:paddingRight="@dimen/layout_height_20"
+                            android:src="@drawable/ic_arrow" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_exchange"
+                        style="@style/BlackFontStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="@dimen/layout_height_30"
+                        android:layout_marginLeft="@dimen/layout_height_40"
+                        android:layout_marginRight="@dimen/layout_height_40"
+                        android:layout_marginTop="@dimen/layout_height_20"
+                        android:background="@drawable/bg_rect_rounded_orange3"
+                        android:onClick="@{() -> view.confirm()}"
+                        android:text="@string/text_sure"
+
+                        android:textColor="@color/white"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

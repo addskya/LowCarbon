@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.bracelet.bind.BindBraceletContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <include layout="@layout/action_bar" />
+
+            <TextView
+                android:id="@+id/bt_disable"
+                style="@style/BlackFontStyle.Middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/layout_height_5"
+                android:gravity="center"
+                android:text="@string/text_bt_disable"
+                android:textColor="@color/text_black3"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bt_searching"
+                style="@style/BlackFontStyle.Middle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_height_5"
+                android:gravity="center"
+                android:text="@string/text_bt_searching"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/bt_close_tips"
+                style="@style/BlackFontStyle.Middle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_height_5"
+                android:gravity="center"
+                android:text="@string/hint_connect_bt_close"
+                android:textColor="@color/gray_dark"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <com.mylowcarbon.app.ui.customize.WaveView
+                    android:id="@+id/wave_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/iv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_phone_big" />
+
+                <ImageView
+                    android:id="@+id/iv_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_search" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/layout_height_30"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/layout_height_40"
+                    android:background="@drawable/bg_rect_rounded_line_solid_gray5"
+                    android:onClick="@{() -> view.gotoBack()}"
+                    android:text="@string/text_cancel"
+                    android:textColor="@color/gray_dark" />
+
+                <Button
+                    android:id="@+id/btn_open"
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/layout_height_40"
+                    android:layout_marginStart="@dimen/layout_height_30"
+                    android:background="@drawable/bg_rect_rounded_orange3"
+                    android:onClick="@{()->view.gotoEnableBt()}"
+                    android:text="@string/text_enable"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.mylowcarbon.app.ui.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@color/white"
+            android:minHeight="@dimen/layout_height_250"
+            android:overScrollMode="never"
+            app:divider_h="@drawable/divider_list_2"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+    </FrameLayout>
+</layout>

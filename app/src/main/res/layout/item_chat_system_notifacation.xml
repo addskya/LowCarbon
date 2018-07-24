@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+
+        <LinearLayout
+            android:id="@+id/ll_msg_sys"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@color/white"
+
+            android:padding="@dimen/layout_height_10">
+
+            <TextView
+                android:id="@+id/tv_msg_sys"
+
+                style="@style/BlackFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_rect_rounded_orange2"
+                android:gravity="center"
+                android:paddingBottom="@dimen/layout_height_5"
+                android:paddingLeft="@dimen/layout_height_20"
+                android:paddingRight="@dimen/layout_height_20"
+                android:paddingTop="@dimen/layout_height_5"
+                android:text=""
+                android:textColor="@color/orange5"
+                android:textSize="14dp" />
+
+
+        </LinearLayout>
+
+ </layout>

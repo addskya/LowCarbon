@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script type="text/javascript" src="./web3.min.js"></script>
+    <script type="text/javascript" src="./ctoken.min.js"></script>
+    <script type="text/javascript">
+
+        //var URL = "http://47.100.55.67:8545/";
+        var URL = "ws://47.100.55.67:8546/";
+
+        var contract = "0xDB38440083fF4cAB97dcf698411F40242aB59eF8";
+
+        var walletApi  ;
+
+        // 初始化 CToken 对象回调回调
+        // @param {error}
+        // @param {result}
+        //连接成功 error 返回为 false，result 为“network connected success” 连接失败 error 返回为 true, result 为“network connected failed”
+        function callback_initCToken(error, result) {
+                console.log("callback_initCToken-----");
+                console.log("callback_initCToken error:" + error);
+                console.log("callback_initCToken result:" + result);
+                console.log("callback_initCToken-----");
+                handler.onCallback_initCToken(error, result);
+            }
+
+
+        // Call only one time
+        //note 因为 Web3js 是异步回调机制，当函数返回为 true 时，并不代表已经成功 建立连接。此时应该进一步通过回调函数获取详细的连接建立信息。
+        function initWallet() {
+            //walletApi = new CToken(URL, contract);
+            console.log("initWallet----- walletApi==null : "+(walletApi==null));
+            walletApi = new CToken(URL, contract);
+            return walletApi.initCToken(callback_initCToken)
+        }
+
+        function test() {
+            console.log("test----- walletApi==null : "+(walletApi==null));
+            var  address1 = walletApi.createWallet("wallet1","Abcd123456");
+            console.log(address1);
+	        var address2 = walletApi.createWallet("wallet2","1q2w3e4r5t6y");
+            console.log(address2);
+
+	        var private_address1 = walletApi.loadWallet("wallet1", "Abcd123456", address1);
+	        console.log(address1 , " private key:", private_address1);
+
+	        var private_address2 = walletApi.loadWallet("wallet2", "1q2w3e4r5t6y", address2);
+	        console.log(address2, " private key:", private_address2);
+
+	        var json = '[{"address":"f606a91f7e929bc14794c26a9c6da9dba1b503cf","crypto":{"cipher":"aes-128-ctr","ciphertext":"3544ea7416b7991bca0ce83ac4980e9c1315ded8e27a4b4e8346376f2fd28377","cipherparams":{"iv":"e07352052588595581ebc6bfab797db0"},"kdf":"scrypt","kdfparams":{"dklen":32,"n":262144,"p":1,"r":8,"salt":"447aaeb6e8aec6cb2a07914bf1680a34f3cc56124ea29586f05dea9c0510b2f3"},"mac":"7f74dfb487abe154ccd777daee64ad7b71592a6300a86dbf4c481a53ad307b6a"},"id":"28ab5388-d6ba-4593-8146-327b106afa33","version":3}]';
+	        var owner_addr = walletApi.importWallet("wallet_owner", json, '111');
+	        console.log(" owner_addr : " + owner_addr);
+
+	        var keystore = walletApi.exportWallet("wallet1","Abcd123456");
+	        console.log(" keystore : " + keystore);
+
+            var bool = walletApi.importWallet("wallet1", keystore ,"Abcd123456");
+	        console.log(" bool : " + bool);
+
+            var ks = "[{\"version\":3,\"id\":\"8bc42b40-ed15-494d-a00c-204102c7e440\",\"address\":\"0db908b9291ba93b2ed5fba8967a7a1e564a89fb\",\"crypto\":{\"ciphertext\":\"7ff954714f60baba2b1926bbe45b664a99f709f0a30ee173b80fbb2e2cff1c0c\",\"cipherparams\":{\"iv\":\"5e939bec4be5dad503703b12169fc6b7\"},\"cipher\":\"aes-128-ctr\",\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"salt\":\"2abd5406c0a8c79a85bb90cbb2e9e9fb33cc63b9f9561dfdc2c4bb3fcc28e825\",\"n\":8192,\"r\":8,\"p\":1},\"mac\":\"4c8d10af0f39d7489cc80bde12f7a16b19d8f30d5a8fbb1e7e29638b28c1b996\"}}]";
+            var bool2 = walletApi.importWallet("18680758192", ks ,"111111");
+	        console.log(" bool2 : " + bool2);
+
+        }
+
+
+        // 查找钱包 根据钱包名称和地址查找本地是否有钱包
+        // @param {walletName} 钱包名称 {address} 钱包地址信息
+        // @return 成功返回true,失败返回 false
+        function findWallet(walletName, address) {
+            return walletApi.findWallet(walletName, address);
+        }
+
+        // 创建钱包,一个钱包仅允许一个账户,并使用口令进行加密保护
+        // @param {walletName} 钱包名称 {password} 钱包加密保护口令
+        // @return 成功返回钱包内部账户地址信息,失败返回 null
+        function createWallet(walletName, password) {
+            return walletApi.createWallet(walletName, password);
+        }
+
+        // 导入 wallet keystore 信息
+        // @param {walletName} 导入钱包名称
+        // {keystore} 钱包 keystore 信息
+        // {password} keystore 保护口令
+        // @return 成功则导出 keystore 对应的账户地址信息,失败则返回 null
+        function importWallet(walletName, keystore, password) {
+            //test();
+            return walletApi.importWallet(walletName, keystore, password);
+        }
+
+        // 导出 wallet keystore 信息,导出前需要进行口令认证
+        // @param {walletName} 钱包名称,使用钱包名称区分不同钱包
+        // {password} 钱包访问口令
+        // @return 成功则导出钱包 keystore 信息,失败则返回 null
+        function exportWallet(walletName, password) {
+            return walletApi.exportWallet(walletName, password);
+        }
+
+        // 使用口令打开钱包
+        // @param {walletName} 钱包名称,使用钱包名称区分不同钱包
+        // {password} 钱包访问口令
+        // {accountAddress optional} 账户地址信息
+        // @return 成功则返回账户私钥,失败则返回 null
+        function loadWallet(walletName, password, accountAddress) {
+            return walletApi.loadWallet(walletName, password, accountAddress);
+        }
+
+        function getWalletInfo() {
+            var value, walletObject, walletAddress, walletInfo;
+            var walletArray = new Array();
+
+            for(var key in localStorage){
+                value = localStorage.getItem(key);
+                walletObject = JSON.parse(value);
+                if(walletObject == null)
+                    break;
+
+                walletAddress = walletObject[0].address;
+
+                walletInfo = {
+                    "walletName": key,
+                    "address": walletAddress
+                };
+                walletArray.push(walletInfo);
+            }
+            console.log(JSON.stringify(walletArray));
+            return JSON.stringify(walletArray);
+        }
+
+        // 获取钱包余额回调
+        // @param {error} 错误信息,无错误返回时为Null
+        // @param {result} 帐户余额
+        function callback_balanceOf(error, result) {
+            console.log("callback_balanceOf-----");
+            console.log("callback_balanceOf error:" + error);
+            console.log("callback_balanceOf result:" + result);
+            console.log("callback_balanceOf-----");
+            handler.onCallback_BalanceOf(error, result);
+        }
+
+        // 获取钱包余额
+        // @param {target} 钱包地址
+        // @return 成功则返回true,失败返回false
+        function balanceOf(target) {
+            walletApi.balanceOf(target, callback_balanceOf);
+        }
+
+
+        // 获取交易费率
+        // @param {error} 错误信息,无错误返回时为Null
+        // @param {result} 交易费率
+        function callback_getRate(error, result) {
+            console.log("callback_getRate-----");
+            console.log("callback_getRate error:" + error);
+            console.log("callback_getRate result:" + result);
+            console.log("callback_getRate-----");
+            handler.onCallback_getRate(error, result);
+        }
+
+        // 获取交易费率
+        // @return 成功则返回true,失败返回false
+        function getRate() {
+            console.log("getRate-----");
+
+            return walletApi.getRate(callback_getRate);
+        }
+
+        // 转账回调
+        // @param {error} 错误信息,无错误返回时为Null
+        // @param {result} 返回此交易的hash值
+        function callback_transferByFee(error, result) {
+            console.log("callback_transferByFee-----");
+            console.log("callback_transferByFee,error:" + error);
+            console.log("callback_transferByFee,result:" + result);
+            console.log("callback_transferByFee-----");
+            handler.onCallback_transferByFee(error, result);
+        }
+
+        // 执行带手续费的转账交易
+        // @param {walletName} 钱包名字
+        // @param {password} 钱包密码
+        // @param {executeAccount} 转出账户
+        // @param {toAccount} 转入账户
+        // @param {amount} 转出金额
+        // @return 成功则返回true,失败返回false
+        function transferByFee(walletName, password, executeAccount, toAccount, amount) {
+            return walletApi.transferByFee(walletName, password, executeAccount, toAccount, amount, callback_transferByFee);
+        }
+
+        // 查询指定账户所参与的交易记录回调
+        // @param {error} 错误信息,无错误返回时为Null
+        // @param {result} 查找结果,为数组类型,包含{from,to,value,date}
+        function callback_history_transactions(error, result) {
+            console.log("error:" + error);
+            console.log("result:" + result);
+            console.log("-------------------------------");
+            var stringResult = JSON.stringify(result).toString();
+            console.log(stringResult);
+            handler.onCallback_historyTransactions(error, stringResult);
+        }
+
+        // 查询指定账户所参与的交易记录
+        // @param {target} 需要查询的账户地址
+        // @return 成功则返回true,失败返回false
+        function showHistoryTransaction(target) {
+            return walletApi.showHistoryTransactions(target, callback_history_transactions);
+        }
+
+        // 获取本地所有钱包信息
+        // @return 返回钱包信息列表(json 格式)，包括{name, address}
+        function getWalletList() {
+            return walletApi.getWalletList();
+        }
+
+
+        // 请求奖励回调
+        // @param {error} 错误信息,无错误返回时为Null
+        // @param {result} 查找结果,为数组类型,包含{from,to,value,date}
+        function callback_exchangeToken(error, result) {
+            console.log("error:" + error);
+            console.log("result:" + result);
+            console.log("-------------------------------");
+            handler.onCallback_exchangeToken(error, result);
+        }
+
+
+        // 请求奖励
+        // @return 返回钱包信息列表(json 格式)，包括{name, address}
+        function exchangeToken(walletName, password, executeAccount, amount) {
+            return walletApi.exchangeToken(walletName,password,executeAccount,amount,callback_exchangeToken);
+        }
+
+         // 检查指定用户是否注册回调
+        // @param {error} 错误信息,无错误返回时为Null
+        // @param {result} 查找结果,为数组类型,包含{from,to,value,date}
+        function callback_checkUser(error, result) {
+            console.log("error:" + error);
+            console.log("result:" + result);
+            console.log("-------------------------------");
+            handler.onCallback_exchangeToken(error, result);
+        }
+        // 检查指定用户是否注册
+        // @return
+        function checkUser(user ) {
+            return walletApi.checkUser(walletName,callback_checkUser);
+        }
+
+        // 删除钱包
+        function removeWallet(walletName, password, accountAddress ) {
+            return walletApi.removeWallet(walletName, password, accountAddress);
+        }
+
+    </script>
+</head>
+<body>
+Api interface
+</body>
+</html>
+
+
+

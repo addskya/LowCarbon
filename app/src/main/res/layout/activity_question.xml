@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.question.QuestionContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/action_bar" />
+
+        <com.mylowcarbon.app.ui.RecyclerView
+            android:id="@+id/questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:divider_h="@drawable/divider_list"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        <TextView
+            style="@style/BlackFontStyle.Small"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_35"
+            android:layout_marginTop="@dimen/layout_height_10"
+            android:drawablePadding="@dimen/layout_height_5"
+            android:gravity="start|center_vertical"
+            android:paddingEnd="@dimen/layout_height_15"
+            android:paddingStart="@dimen/layout_height_15"
+            android:text="@string/text_question_summary"
+            android:textColor="@color/gray_dark"
+            android:textStyle="normal" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            style="@style/BlackFontStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/layout_height_30"
+            android:layout_marginEnd="@dimen/layout_height_50"
+            android:layout_marginStart="@dimen/layout_height_50"
+            android:layout_marginTop="@dimen/layout_height_20"
+            android:background="@drawable/bg_rect_rounded_orange3"
+            android:minHeight="@dimen/layout_height_40"
+            android:onClick="@{() -> view.commit()}"
+            android:text="@string/text_sure"
+            android:textColor="@color/white"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</layout>

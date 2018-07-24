@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/layout_height_15"
+            android:layout_marginTop="@dimen/layout_height_15"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_height_15"
+            android:paddingRight="@dimen/layout_height_20">
+
+            <ImageView
+                android:id="@+id/civ_head"
+                android:layout_width="@dimen/layout_height_80"
+                android:layout_height="@dimen/layout_height_80"
+                android:layout_centerVertical="true"
+                android:src="@color/colorAccent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/layout_height_15"
+                android:layout_toRightOf="@+id/civ_head"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="这里展示的是奖品标题1这里展示的是奖品标题1这里展示的是奖品标题1这里展示的是奖品标题1"
+                    android:textColor="@color/text_black3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_height_15"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/WhiteFontStyle.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="数量：1"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        style="@style/WhiteFontStyle.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/layout_height_15"
+                        android:text="规格：100x100"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="12sp"
+
+                        android:textStyle="normal" />
+
+                    <TextView
+                        style="@style/WhiteFontStyle.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/layout_height_15"
+                        android:text="样式：正方形"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="12sp"
+
+                        android:textStyle="normal" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_50"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_height_15"
+            android:paddingRight="@dimen/layout_height_20">
+
+            <TextView
+                style="@style/BlackFontStyle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="共1件奖品"
+                android:textColor="@color/text_black2"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                style="@style/BlackFontStyle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/layout_height_15"
+                android:text="实付：500LCL"
+                android:textColor="@color/text_black2"
+                android:textSize="12sp"
+
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_50"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_height_15"
+            android:paddingRight="@dimen/layout_height_20">
+
+            <TextView
+                style="@style/BlackFontStyle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已发货"
+                android:textColor="@color/green"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginLeft="@dimen/layout_height_10"
+
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_remind"
+                     style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/layout_height_25"
+                    android:layout_marginLeft="@dimen/layout_height_10"
+                    android:background="@drawable/bg_rect_rounded_orange3"
+                     android:text="提醒发货"
+                    android:visibility="gone"
+                    android:textSize="@dimen/txt_size_smaller" />
+                <Button
+                    android:id="@+id/btn_view"
+
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/layout_height_25"
+                    android:layout_marginLeft="@dimen/layout_height_10"
+                    android:background="@drawable/bg_rect_rounded_orange3"
+                     android:text="查看物流"
+                    android:textSize="@dimen/txt_size_smaller" />
+                <Button
+                    android:id="@+id/btn_confirm"
+
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/layout_height_25"
+                    android:layout_marginLeft="@dimen/layout_height_10"
+                    android:background="@drawable/bg_rect_rounded_orange3"
+                     android:text="确认收货"
+                    android:textSize="@dimen/txt_size_smaller" />
+                <Button
+                    android:id="@+id/btn_exchange"
+
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/layout_height_25"
+                    android:layout_marginLeft="@dimen/layout_height_10"
+                    android:background="@drawable/bg_rect_rounded_orange3"
+                     android:text="再次兑换"
+                    android:textSize="@dimen/txt_size_smaller"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

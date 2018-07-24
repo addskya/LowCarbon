@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 账号长度有效性 -->
+    <integer name="account_min_length">3</integer>
+
+    <!-- 密码长度有效性 -->
+    <integer name="password_min_length">6</integer>
+
+    <!-- 验证码可以使用的字符集,目前去掉了字母I,O,Z,为了避免与数字太相似 -->
+    <string name="verify_code_charset">"AaBbCcDdEeFfGgHhJjKkLlMmNnPpQqRrSsTtUuVvWwXxYy1234567890"</string>
+
+    <!-- 验证码长度,6位 -->
+    <integer name="verify_code_length">6</integer>
+
+    <!-- the try login times -->
+    <integer name="max_login_fail_times">3</integer>
+
+    <!-- 昵称最长字符数 -->
+    <integer name="nickname_max_length">10</integer>
+
+    <!-- 昵称最短字符数 -->
+    <integer name="nickname_min_length">2</integer>
+
+    <!-- Fragment  -->
+    <integer name="fragment_animation_duration">300</integer>
+
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_msg_sys"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/layout_height_10">
+
+            <TextView
+                android:id="@+id/tv_msg_sys"
+
+                style="@style/BlackFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_rect_rounded_orange2"
+                android:gravity="center"
+                android:paddingBottom="@dimen/layout_height_5"
+                android:paddingLeft="@dimen/layout_height_20"
+                android:paddingRight="@dimen/layout_height_20"
+                android:paddingTop="@dimen/layout_height_5"
+                android:text="系统消息：买家已下单，等待买家付款"
+                android:textColor="@color/orange5"
+                android:textSize="14dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_left"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/layout_height_10"
+            android:paddingLeft="@dimen/layout_height_15"
+            android:paddingRight="@dimen/layout_height_15"
+            android:paddingTop="@dimen/layout_height_10">
+
+            <com.mylowcarbon.app.ui.SimpleImageView
+                android:id="@+id/civ_head_left"
+                android:layout_width="@dimen/layout_height_60"
+                android:layout_height="@dimen/layout_height_60"
+                android:layout_centerVertical="true"
+                fresco:src="@drawable/ic_head" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/layout_height_10"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_head_left"
+
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卖家昵称"
+                    android:textColor="@color/text_black3"
+
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tv_msg_left"
+
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:background="@drawable/bg_rect_rounded_gray2"
+                    android:paddingBottom="@dimen/layout_height_10"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:paddingTop="@dimen/layout_height_10"
+
+                    android:text="我的收款账号是6225 6001 8888 8888我的收款账号是6225 6001 8888 8888我的收款账号是6225 6001 8888 8888"
+                    android:textColor="@color/text_black2"
+                    android:textSize="13dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_right"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/layout_height_10"
+            android:paddingLeft="@dimen/layout_height_15"
+            android:paddingRight="@dimen/layout_height_15"
+            android:paddingTop="@dimen/layout_height_10">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/layout_height_10"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_head_right"
+
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="买家昵称"
+                    android:textColor="@color/text_black3"
+
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tv_msg_right"
+
+                    style="@style/BlackFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:background="@drawable/bg_rect_rounded_purple2"
+                    android:paddingBottom="@dimen/layout_height_10"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:paddingTop="@dimen/layout_height_10"
+                    android:text="我的收款账号是6225 6001 8888 8888我的收款账号是6225 6001 8888 8888我的收款账号是6225 6001 8888 8888我的收款账号是6225 6001 8888 8888我的收款账号是6225 6001 8888 8888我的收款账号是6225 6001 8888 8888"
+
+                    android:textColor="@color/white"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <com.mylowcarbon.app.ui.SimpleImageView
+                android:id="@+id/civ_head_right"
+                android:layout_width="@dimen/layout_height_60"
+                android:layout_height="@dimen/layout_height_60"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/layout_height_10"
+                fresco:src="@drawable/ic_head" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

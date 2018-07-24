@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="payEntry"
+            type="com.mylowcarbon.app.my.password.deal.PayEntry" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/action_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/layout_height_60">
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/layout_height_5"
+                android:gravity="center"
+                android:text="你的交易密码"
+                android:textColor="@color/text_black3"
+                android:textStyle="normal" />
+
+            <TextView
+                style="@style/BlackFontStyle.Middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_height_15"
+                android:drawablePadding="@dimen/layout_height_5"
+                android:gravity="center"
+                android:text="@{payEntry.pay_pwd}"
+                android:textColor="@color/orange6"
+                android:textSize="@dimen/txt_size_middler"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

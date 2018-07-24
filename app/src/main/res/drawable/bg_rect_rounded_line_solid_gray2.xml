@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Non focused states -->
+
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="1px"
+                android:color="@color/gray6" />
+        </shape>
+    </item>
+    <item android:state_focused="false" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="1px"
+                android:color="@color/orange4" />
+        </shape>
+    </item>
+
+    <!-- Focused states -->
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="false">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="1px"
+                android:color="@color/orange4" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="false" android:state_selected="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="1px"
+                android:color="@color/orange4" />
+        </shape>
+    </item>
+
+    <!-- Pressed -->
+
+    <item android:state_pressed="true">
+        <shape  android:shape="rectangle" android:useLevel="true">
+            <solid android:color="@color/white" />
+            <corners android:radius="6px" />
+            <stroke
+                android:width="1px"
+                android:color="@color/orange4" />
+        </shape>
+    </item>
+
+</selector>

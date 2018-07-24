@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.recommend.MyRecommendContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+    </data>
+
+    <com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:guidance_text_color="@color/colorPrimary"
+        app:guidance_view_bg_color="@color/transparent"
+        app:load_text="@string/text_load"
+        app:progress_bar_color="@color/colorPrimary"
+        app:refresh_text="@string/text_refresh">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_lightest"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_50"
+                    android:background="@color/gray_lightest"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/layout_height_5"
+
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_code"
+                                style="@style/BlackFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/format_invitation_code"
+                                android:textColor="@color/text_black2"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/BlackFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/layout_height_25"
+                                android:gravity="center"
+                                android:onClick="@{() -> view.onViewClick(0)}"
+                                android:text="@string/text_copy_invitation_code"
+                                android:textColor="@color/blue3"
+                                android:textStyle="normal" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:onClick="@{() -> view.onViewClick(1)}"
+                        android:padding="@dimen/layout_height_10"
+                        android:src="@drawable/ic_myqr_orange" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/layout_height_20"
+                    android:paddingLeft="@dimen/layout_height_15"
+                    android:paddingRight="@dimen/layout_height_15"
+                    android:paddingTop="@dimen/layout_height_20">
+
+                    <TextView
+                        android:id="@+id/tv_recommend_profit"
+
+                        style="@style/BlackFontStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_gift_orange"
+                        android:drawablePadding="@dimen/layout_height_5"
+                        android:gravity="center"
+                        android:text="@string/format_recommend_profit"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/layout_height_15"
+                        android:background="@drawable/bg_rect_roundes_gray3"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/layout_height_15"
+                        android:paddingLeft="@dimen/layout_height_20"
+                        android:paddingRight="@dimen/layout_height_20"
+                        android:paddingTop="@dimen/layout_height_15">
+
+                        <TextView
+                            android:id="@+id/tv_recommend_award_desc"
+                            style="@style/BlackFontStyle.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                             android:text="1、通过推荐码注册并完成实名认证，为有效推荐数据。"
+                            android:textColor="@color/text_black2"
+                            android:textSize="@dimen/txt_size_smaller"
+                            android:textStyle="normal" />
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_lightest"
+                    android:layout_weight="1"
+
+                    android:layout_marginTop="@dimen/layout_height_5" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </com.mylowcarbon.app.ui.customize.MySwipeRefreshLayout>
+</layout>

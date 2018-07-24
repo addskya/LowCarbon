@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.mylowcarbon.app.my.question.QuestionContract.View" />
+
+        <variable
+            name="question"
+            type="com.mylowcarbon.app.my.question.Question" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_50"
+            android:layout_marginTop="@dimen/layout_height_10"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/layout_height_15"
+            android:paddingStart="@dimen/layout_height_15">
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="@dimen/layout_height_80"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/layout_height_5"
+                android:gravity="start"
+                android:text="@string/text_verify_question"
+                android:textColor="@color/text_black3"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="end|center_vertical"
+                android:minHeight="40dp"
+                android:text="@{question.content}" />
+
+            <ImageView
+                android:layout_width="@dimen/layout_height_15"
+                android:layout_height="@dimen/layout_height_15"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_arrow" />
+        </LinearLayout>
+
+        <include layout="@layout/settings_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_50"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/layout_height_15">
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="@dimen/layout_height_80"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/layout_height_5"
+                android:gravity="start"
+                android:text="@string/text_answer"
+                android:textColor="@color/text_black3"
+                android:textStyle="normal" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:afterTextChanged="@{(editable) -> view.onAnswerChanged(question, editable)}"
+                android:background="@null"
+                android:focusable="true"
+                android:gravity="end|center_vertical"
+                android:hint="@string/hint_answer"
+                android:inputType="text"
+                android:text="@{question.answer}"
+                android:textColor="@color/text_black3"
+                android:textColorHint="@color/text_gray2"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

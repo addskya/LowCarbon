@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.ride.RideContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+             layout="@layout/action_bar" />
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appBarLayout" />
+
+        <RelativeLayout
+            android:layout_width="@dimen/layout_height_300"
+            android:layout_height="@dimen/layout_height_300"
+            android:layout_marginBottom="-50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <com.mylowcarbon.app.ui.customize.WaveView
+                android:id="@+id/wave_view"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/btn_action"
+                style="@style/WhiteFontStyle.Middle"
+                android:textStyle="normal"
+                android:layout_width="@dimen/layout_height_90"
+                android:layout_height="@dimen/layout_height_90"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_circle_orange"
+                android:onClick="@{() -> view.start()}"
+                android:text="开始" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

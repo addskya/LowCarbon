@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.password.login.EditLoginPwdContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/action_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_lightest"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_50"
+                android:layout_marginTop="@dimen/layout_height_10"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="@dimen/layout_height_15"
+                android:paddingStart="@dimen/layout_height_15">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="@dimen/layout_height_80"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:gravity="start"
+                    android:text="@string/text_old_password"
+                    android:textColor="@color/text_black3"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/old_password"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/layout_height_15"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:hint="@string/hint_old_password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/text_black3"
+                    android:textColorHint="@color/text_gray2"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_50"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_height_15">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="@dimen/layout_height_80"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:gravity="start"
+                    android:text="@string/text_new_password"
+                    android:textColor="@color/text_black3"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/new_password_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/layout_height_15"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:hint="@string/hint_password_limit"
+                    android:inputType="textPassword"
+                    android:textColor="@color/text_black3"
+                    android:textColorHint="@color/text_gray2"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <include layout="@layout/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_50"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_height_15">
+
+                <TextView
+                    style="@style/BlackFontStyle"
+                    android:layout_width="@dimen/layout_height_80"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/layout_height_5"
+                    android:gravity="start"
+                    android:text="@string/text_password_confirm"
+                    android:textColor="@color/text_black3"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/new_password_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/layout_height_15"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:hint="@string/hint_password_confirm"
+                    android:inputType="textPassword"
+                    android:textColor="@color/text_black3"
+                    android:textColorHint="@color/text_gray2"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/commit"
+                style="@style/BlackFontStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_marginBottom="@dimen/layout_height_30"
+                android:layout_marginEnd="@dimen/layout_height_50"
+                android:layout_marginStart="@dimen/layout_height_50"
+                android:layout_marginTop="@dimen/layout_height_20"
+                android:background="@drawable/bg_rect_rounded_orange3"
+                android:onClick="@{() -> view.commit()}"
+                android:text="@string/text_sure"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

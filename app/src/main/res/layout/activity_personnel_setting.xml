@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.settings.PersonalSettingsContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+        <variable
+            name="userInfo"
+            type="com.mylowcarbon.app.model.UserInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/action_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_lightest"
+                android:orientation="vertical">
+
+                <com.mylowcarbon.app.ui.SettingsIconView
+                    style="@style/SettingsView"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:onClick="@{() -> view.onViewClick(1)}"
+                    app:arrow="true"
+                    app:name="@string/text_avatar"
+                    app:imageUri="@{userInfo.avatar}"/>
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onViewClick(2)}"
+                    app:name="昵称" />
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onViewClick(3)}"
+                    app:name="绑定电子邮件" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:onClick="@{() -> view.onViewClick(4)}"
+                    app:name="性别" />
+
+                <include layout="@layout/settings_divider" />
+
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onViewClick(5)}"
+                    app:name="身高" />
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onViewClick(6)}"
+                    app:name="体重" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:onClick="@{() -> view.onViewClick(7)}"
+                    app:name="修改登录密码" />
+
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onViewClick(8)}"
+                    app:name="交易密码" />
+
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onViewClick(9)}"
+                    app:name="密保问题" />
+
+                <include layout="@layout/settings_divider" />
+
+                <Button
+                    android:id="@+id/logout"
+                    style="@style/BlackFontStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_40"
+                    android:layout_marginBottom="@dimen/layout_height_30"
+                    android:layout_marginLeft="@dimen/layout_height_50"
+                    android:layout_marginRight="@dimen/layout_height_50"
+                    android:layout_marginTop="@dimen/layout_height_20"
+                    android:background="@drawable/bg_rect_rounded_orange3"
+                    android:onClick="@{() -> view.onViewClick(10)}"
+                    android:text="@string/text_logout"
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

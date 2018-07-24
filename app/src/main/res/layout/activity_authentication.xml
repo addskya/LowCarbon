@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.authentication.AuthenticationContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+             layout="@layout/action_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_lightest"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_verify_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_lightest"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height_50"
+                            android:layout_marginTop="@dimen/layout_height_10"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+
+                            android:paddingLeft="@dimen/layout_height_15"
+                            android:paddingRight="@dimen/layout_height_15">
+
+                            <TextView
+                                style="@style/BlackFontStyle"
+                                android:layout_width="@dimen/layout_height_80"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/layout_height_5"
+
+                                android:gravity="left"
+                                android:text="@string/text_name"
+                                android:textColor="@color/text_black3"
+                                android:textStyle="normal" />
+
+                            <EditText
+                                android:id="@+id/et_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:focusable="true"
+                                android:hint="@string/hint_name"
+                                android:inputType="text"
+                                android:textColor="@color/text_black3"
+                                android:textColorHint="@color/text_gray2"
+                                android:textSize="16dp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="@color/gray6" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height_50"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:onClick="@{() -> view.onViewClick(6)}"
+
+                            android:orientation="horizontal"
+                            android:padding="@dimen/layout_height_15">
+
+                            <TextView
+                                style="@style/BlackFontStyle"
+                                android:layout_width="@dimen/layout_height_80"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/layout_height_5"
+
+                                android:gravity="left"
+                                android:text="@string/text_id"
+                                android:textColor="@color/text_black3"
+                                android:textStyle="normal" />
+
+                            <EditText
+                                android:id="@+id/et_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:focusable="true"
+                                android:hint="@string/hint_id"
+                                android:inputType="number"
+                                android:textColor="@color/text_black3"
+                                android:textColorHint="@color/text_gray2"
+                                android:textSize="16dp" />
+
+
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height_120"
+                            android:layout_marginTop="@dimen/layout_height_10"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:onClick="@{() -> view.onViewClick(0)}"
+                            android:padding="@dimen/layout_height_15">
+
+                            <TextView
+                                style="@style/BlackFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawablePadding="@dimen/layout_height_10"
+                                android:drawableTop="@drawable/ic_identity_front_gray"
+                                android:text="@string/text_upload_id_photo_front"
+                                android:textColor="@color/text_black2" />
+
+                            <ImageView
+                                android:id="@+id/iv_photo_front"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                 android:layout_gravity="center" />s
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height_120"
+                            android:layout_marginTop="@dimen/layout_height_10"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:onClick="@{() -> view.onViewClick(1)}"
+
+                            android:orientation="horizontal"
+                            android:padding="@dimen/layout_height_15">
+
+                            <TextView
+                                style="@style/BlackFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawablePadding="@dimen/layout_height_10"
+                                android:drawableTop="@drawable/ic_identity_back_gray"
+
+                                android:gravity="left"
+                                android:text="@string/text_upload_id_photo_back"
+                                android:textColor="@color/text_black2" />
+
+                            <ImageView
+                                android:id="@+id/iv_photo_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/layout_height_120"
+                            android:layout_marginTop="@dimen/layout_height_10"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:onClick="@{() -> view.onViewClick(2)}"
+
+                            android:orientation="horizontal"
+                            android:padding="@dimen/layout_height_15">
+
+                            <TextView
+                                style="@style/BlackFontStyle.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawablePadding="@dimen/layout_height_10"
+                                android:drawableTop="@drawable/ic_upload_identity_gray"
+                                android:gravity="left"
+
+                                android:text="@string/text_upload_id_photo_hold"
+                                android:textColor="@color/text_black2" />
+
+                            <ImageView
+                                android:id="@+id/iv_photo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center" />
+
+                        </FrameLayout>
+
+                        <TextView
+                            style="@style/BlackFontStyle.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_height_35"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="@dimen/layout_height_10"
+                            android:drawableLeft="@drawable/ic_info_orange"
+                            android:drawablePadding="@dimen/layout_height_5"
+                            android:gravity="right|center_vertical"
+                            android:onClick="@{() -> view.onViewClick(3)}"
+                            android:paddingLeft="@dimen/layout_height_15"
+                            android:paddingRight="@dimen/layout_height_15"
+                            android:text="上传证件照片要求"
+
+                            android:textColor="@color/gray_dark"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_exchange"
+                        style="@style/BlackFontStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_height_40"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="@dimen/layout_height_30"
+                        android:layout_marginLeft="@dimen/layout_height_50"
+                        android:layout_marginRight="@dimen/layout_height_50"
+                        android:layout_marginTop="@dimen/layout_height_20"
+                        android:background="@drawable/bg_rect_rounded_orange3"
+                        android:onClick="@{() -> view.onViewClick(4)}"
+                        android:text="@string/text_sure"
+
+                        android:textColor="@color/white"
+                        android:visibility="visible" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

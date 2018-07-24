@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.home.my.MyContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_130"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.mylowcarbon.app.ui.SimpleImageView
+                android:id="@+id/civ_head"
+                android:layout_width="@dimen/layout_height_60"
+                android:layout_height="@dimen/layout_height_60"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/layout_height_20"
+                android:onClick="@{() -> view.onItemClick(0)}"
+                fresco:placeholderImage="@drawable/ic_header_default"
+                fresco:roundAsCircle="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/layout_height_15"
+                android:layout_toEndOf="@+id/civ_head"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_nick_name"
+                    style="@style/WhiteFontStyle.Middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="@dimen/layout_height_20"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    style="@style/WhiteFontStyle.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_height_10"
+                    android:text=" "
+                    android:textColor="@color/text_white"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/layout_height_20"
+                android:onClick="@{() -> view.onItemClick(0)}"
+                android:padding="@dimen/layout_height_5"
+                android:src="@drawable/ic_setting_white" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/layout_height_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_lightest"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_50"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:onClick="@{() -> view.onItemClick(1)}"
+                    android:orientation="horizontal"
+
+                    android:padding="@dimen/layout_height_15">
+
+                    <TextView
+                        style="@style/BlackFontStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/layout_height_5"
+                        android:drawableStart="@drawable/ic_identity_orange"
+
+                        android:gravity="start"
+                        android:text="身份认证"
+                        android:textColor="@color/text_black3"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tv_id_status"
+                        style="@style/BlackFontStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/layout_height_10"
+                        android:drawableStart="@drawable/ic_unidentity_gray"
+                        android:gravity="end"
+                        android:text="未认证"
+                        android:textColor="@color/text_black2" />
+
+                    <ImageView
+                        android:layout_width="@dimen/layout_height_15"
+                        android:layout_height="@dimen/layout_height_15"
+                        android:src="@drawable/ic_arrow" />
+
+                </LinearLayout>
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onItemClick(2)}"
+                    app:name="我的钱包"
+                    app:thumb="@drawable/ic_wallet_orange" />
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onItemClick(3)}"
+                    app:name="我的设备"
+                    app:thumb="@drawable/ic_mydevices_orange" />
+
+                <include layout="@layout/settings_divider" />
+
+                <!--<com.mylowcarbon.app.ui.SettingsView-->
+                    <!--style="@style/SettingsView"-->
+                    <!--android:onClick="@{() -> view.onItemClick(4)}"-->
+                    <!--app:name="订单跟踪"-->
+                    <!--app:thumb="@drawable/ic_order_orange" />-->
+
+                <!--<include layout="@layout/settings_divider" />-->
+
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onItemClick(5)}"
+                    app:name="推荐有奖"
+                    app:thumb="@drawable/ic_recommend_orange" />
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onItemClick(6)}"
+                    app:name="服务协议"
+                    app:thumb="@drawable/ic_serviceagreement_orange" />
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onItemClick(7)}"
+                    app:name="发起投诉"
+                    app:thumb="@drawable/ic_complaints_orange" />
+
+                <include layout="@layout/settings_divider" />
+
+                <com.mylowcarbon.app.ui.SettingsView
+                    style="@style/SettingsView"
+                    android:onClick="@{() -> view.onItemClick(8)}"
+                    app:name="关于我们"
+                    app:thumb="@drawable/ic_aboutus_orange" />
+
+                <include layout="@layout/settings_divider" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

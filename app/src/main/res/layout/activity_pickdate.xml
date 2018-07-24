@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.mylowcarbon.app.my.recommend.PickDateContract.View" />
+
+        <variable
+            name="view"
+            type="View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_lightest"
+
+        android:orientation="vertical">
+
+        <include
+             layout="@layout/action_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/layout_height_50"
+            android:paddingLeft="@dimen/layout_height_35"
+            android:paddingRight="@dimen/layout_height_35"
+            android:paddingTop="@dimen/layout_height_65">
+
+            <EditText
+                android:id="@+id/et_startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray4"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="开始时间"
+                android:inputType="none"
+                android:onClick="@{() -> view.onViewClick(0)}"
+
+                android:textColor="@color/text_black3"
+                android:textColorHint="@color/text_gray2" />
+
+            <TextView
+                style="@style/BlackFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingLeft="@dimen/layout_height_20"
+                android:paddingRight="@dimen/layout_height_20"
+                android:text="至"
+                android:textColor="@color/text_black3"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/et_endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_height_40"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_rounded_line_solid_gray4"
+                android:focusable="false"
+                android:gravity="center"
+                android:hint="结束时间"
+                android:inputType="none"
+                android:onClick="@{() -> view.onViewClick(1)}"
+
+                android:textColor="@color/text_black3"
+                android:textColorHint="@color/text_gray2" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_exchange"
+            style="@style/BlackFontStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height_40"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/layout_height_50"
+            android:layout_marginRight="@dimen/layout_height_50"
+            android:background="@drawable/bg_rect_rounded_orange3"
+            android:onClick="@{() -> view.onViewClick(2)}"
+            android:text="确定"
+
+            android:textColor="@color/white"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    </layout>
